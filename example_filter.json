@@ -1,0 +1,17 @@
+{
+  "conjunction": "or",
+  "items": [
+    {
+      "filter": "filter:tasks:data.cache_Z1",
+      "operator": "equal",
+      "value": "Z1.3",
+      "type": "String"
+    },
+    {
+      "filter": "filter:tasks:data.cache_A1",
+      "operator": "equal",
+      "value": "A1.4",
+      "type": "String"
+    }
+  ]
+}
