@@ -99,9 +99,9 @@ def create_filter_obj_from_json(json_str):
 
 
     if filter_dict['conjunction'].lower() == 'or':
-        operator = Filters.OR
+        base_operator = Filters.OR
     elif filter_dict['conjunction'].lower() == 'and':
-        operator = Filters.AND
+        base_operator = Filters.AND
     else:
         raise ValueError("Invalid conjunction. Only 'and' and 'or' are allowed.")
 
@@ -122,7 +122,7 @@ def create_filter_obj_from_json(json_str):
             )
         )
 
-    return Filters.create(operator, filter_items)
+    return Filters.create(base_operator, filter_items)
 
 
 
