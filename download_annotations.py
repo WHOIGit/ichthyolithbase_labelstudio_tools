@@ -233,7 +233,8 @@ def main():
     if args.outfile:
         outfile = args.outfile
     else:
-        outfile = f'{title}.csv'
+        safe_title = title.replace(':','-')
+        outfile = f'{safe_title}.csv'
     output_path = os.path.join(args.outdir, outfile)
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     df.to_csv(output_path, index=False)
