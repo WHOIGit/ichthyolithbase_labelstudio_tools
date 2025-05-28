@@ -1,3 +1,4 @@
 label-studio-sdk 
 requests
 tqdm
+boto3
