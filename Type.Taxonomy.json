@@ -1,0 +1,709 @@
+{
+  "items": [
+    {
+      "value": "Arrowheads, Airplanes, Diamonds, and Triangle",
+      "children": [
+        {
+          "value": "Airplane"
+        },
+        {
+          "value": "Angular Edged Diamond"
+        },
+        {
+          "value": "Angular Straight Edge"
+        },
+        {
+          "value": "Arrowhead"
+        },
+        {
+          "value": "Bilateral Single Ridged Arrowhead"
+        },
+        {
+          "value": "Central Ridged Diamond"
+        },
+        {
+          "value": "Central Ridged Triangle"
+        },
+        {
+          "value": "Complex Central Ridged Triangle"
+        },
+        {
+          "value": "Cruciform Arrow"
+        },
+        {
+          "value": "Extended Forked Arrow"
+        },
+        {
+          "value": "Flying squirrel"
+        },
+        {
+          "value": "Funky Central Ridged Diamond"
+        },
+        {
+          "value": "Geometric Arrowhead"
+        },
+        {
+          "value": "High Ridged Diamond"
+        },
+        {
+          "value": "Short Troughed Diamond"
+        },
+        {
+          "value": "Stretched Airplane"
+        },
+        {
+          "value": "Triangular Troughed Arrow"
+        },
+        {
+          "value": "Troughed Diamond"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Bilateral Crown",
+      "children": [
+        {
+          "value": "Bilateral Fan"
+        },
+        {
+          "value": "Bilateral Single Ridged"
+        },
+        {
+          "value": "Stretched Bilateral Central Ridged"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Criss Cros",
+      "children": [
+        {
+          "value": "Five Ridged Criss Cross"
+        },
+        {
+          "value": "Symmetrical Criss Cross"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Kite",
+      "children": [
+        {
+          "value": "Asymmetrical Kite with Oval Center"
+        },
+        {
+          "value": "Asymmetrical Kite with Ridged Mound"
+        },
+        {
+          "value": "Diamond Kite"
+        },
+        {
+          "value": "Generic Kite"
+        },
+        {
+          "value": "Kite with Bubble"
+        },
+        {
+          "value": "Kite-Like"
+        },
+        {
+          "value": "Sharp Kite"
+        },
+        {
+          "value": "Single Dimpled Quadrilateral"
+        },
+        {
+          "value": "Square Kite with Nodules"
+        },
+        {
+          "value": "Squished Kite"
+        },
+        {
+          "value": "Thin Ridged Kite"
+        },
+        {
+          "value": "Wrinkly Kite"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Linear Branchin",
+      "children": [
+        {
+          "value": "Branching Dust Pan"
+        },
+        {
+          "value": "Branching Fan"
+        },
+        {
+          "value": "Branching Triangle"
+        },
+        {
+          "value": "Five Thin Ridged Branching Fan"
+        },
+        {
+          "value": "Oblong Branching Crown"
+        },
+        {
+          "value": "Shallow Ridged Branching Fan"
+        },
+        {
+          "value": "Stretched Branching Crown"
+        },
+        {
+          "value": "Widespread Branching Crown"
+        },
+        {
+          "value": "Wishbone"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Many Ridged Fans and Spade",
+      "children": [
+        {
+          "value": "Five Thin Ridged Fan"
+        },
+        {
+          "value": "Forked Spade"
+        },
+        {
+          "value": "Many Ridged Linear Fan"
+        },
+        {
+          "value": "Many Thin Ridged Spade "
+        },
+        {
+          "value": "Rake"
+        },
+        {
+          "value": "Shallow Ridged Wide Crown"
+        },
+        {
+          "value": "Three Ridged Linear Fan with Ridge Outgrowths"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Multi and Single Dimpled Complex Polygon",
+      "children": [
+        {
+          "value": "Bilateral Polygon"
+        },
+        {
+          "value": "Bunny Ears"
+        },
+        {
+          "value": "Double Dimpled Hexagon"
+        },
+        {
+          "value": "Eyeball"
+        },
+        {
+          "value": "Fusiform Dimpled Diamond"
+        },
+        {
+          "value": "Generic Double Dimpled Complex Polygon"
+        },
+        {
+          "value": "Generic Single Dimpled Complex Polygon"
+        },
+        {
+          "value": "Helter Skelter"
+        },
+        {
+          "value": "Many Celled"
+        },
+        {
+          "value": "Many Celled Central Complex Polygon"
+        },
+        {
+          "value": "Raised Dimple"
+        },
+        {
+          "value": "Rounded Cone"
+        },
+        {
+          "value": "Single Dimpled Heptagon"
+        },
+        {
+          "value": "Single Dimpled Hexagon"
+        },
+        {
+          "value": "Single Dimpled Hexagon with Serrated Edges"
+        },
+        {
+          "value": "Single Dimpled Octagon"
+        },
+        {
+          "value": "Single Dimpled Pentagon"
+        },
+        {
+          "value": "Stretched Two Dimpled Spade"
+        },
+        {
+          "value": "Triple Dimpled Crown"
+        },
+        {
+          "value": "Two Dimpled Fan"
+        },
+        {
+          "value": "Two Dimpled Fan with Tail"
+        },
+        {
+          "value": "Two Dimpled Rectangle"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Other Branchin",
+      "children": [
+        {
+          "value": "Branching Fragment"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Other Geometri",
+      "children": [
+        {
+          "value": "Asymmetrical Criss Cross"
+        },
+        {
+          "value": "GenGeo"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Other Linea",
+      "children": [
+        {
+          "value": "Crinkle Tops"
+        },
+        {
+          "value": "Elephant"
+        },
+        {
+          "value": "Forked Oval"
+        },
+        {
+          "value": "Four Ridged Linear Spade"
+        },
+        {
+          "value": "Funky Central Ridged Spade"
+        },
+        {
+          "value": "GenLin"
+        },
+        {
+          "value": "Llama"
+        },
+        {
+          "value": "Single Ridged Spade"
+        },
+        {
+          "value": "Wilted tulip"
+        },
+        {
+          "value": "Zebra Hoof"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Other Meanderin",
+      "children": [
+        {
+          "value": "Branching and Flared Chunk"
+        },
+        {
+          "value": "Oak Leaf"
+        },
+        {
+          "value": "Wrinkly"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Petal",
+      "children": [
+        {
+          "value": "Bottom Bulbed Three Ridged Petal"
+        },
+        {
+          "value": "Central Ridged Petal"
+        },
+        {
+          "value": "Central Troughed Petal"
+        },
+        {
+          "value": "Extended Central Long Troughed Petal"
+        },
+        {
+          "value": "Extended Central Troughed Petal"
+        },
+        {
+          "value": "Four Thin Ridged Petal"
+        },
+        {
+          "value": "Madeleine"
+        },
+        {
+          "value": "Many Ridged Petal"
+        },
+        {
+          "value": "Minnie Indented Shell"
+        },
+        {
+          "value": "Stretched Minnie Indented Shell"
+        },
+        {
+          "value": "Tall Central Ridged Petal"
+        },
+        {
+          "value": "Three Ridged Petal"
+        },
+        {
+          "value": "Triple Ridged Petal"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Ridged Circle",
+      "children": [
+        {
+          "value": "Central Ridged Textured Circle"
+        },
+        {
+          "value": "Circular Petal"
+        },
+        {
+          "value": "Minnie Ridged Circle"
+        },
+        {
+          "value": "Ridged Circle"
+        },
+        {
+          "value": "Shallow Ridged Circle"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Scoop",
+      "children": [
+        {
+          "value": "Cracked Kite"
+        },
+        {
+          "value": "Scoop"
+        },
+        {
+          "value": "Spear"
+        },
+        {
+          "value": "Tunnel"
+        },
+        {
+          "value": "Volcano"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Smoot",
+      "children": [
+        {
+          "value": "Caldera Diamond"
+        },
+        {
+          "value": "Cheeky"
+        },
+        {
+          "value": "Raised Rectangle"
+        },
+        {
+          "value": "Smooth"
+        },
+        {
+          "value": "Smooth Arrow"
+        },
+        {
+          "value": "Smooth circle"
+        },
+        {
+          "value": "Smooth Extended Trident"
+        },
+        {
+          "value": "Smooth Nubbed"
+        },
+        {
+          "value": "Smooth Petal"
+        },
+        {
+          "value": "Smooth Scalloped"
+        },
+        {
+          "value": "Thumbprint disc"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Spine",
+      "children": [
+        {
+          "value": "Circular tipping spine"
+        },
+        {
+          "value": "Fusiform spines"
+        },
+        {
+          "value": "Nub Spine"
+        },
+        {
+          "value": "Radial Angled Spines"
+        },
+        {
+          "value": "Triangular Spines"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Trident",
+      "children": [
+        {
+          "value": "Big Three Ridge"
+        },
+        {
+          "value": "Central Five Ridged Extended Trident"
+        },
+        {
+          "value": "Central Ridged Extended Trident"
+        },
+        {
+          "value": "Central Seven Ridged Extended Trident"
+        },
+        {
+          "value": "Chubby Trident"
+        },
+        {
+          "value": "Dagger"
+        },
+        {
+          "value": "Eared Trident"
+        },
+        {
+          "value": "Extended Central Ridged and Textured Trident"
+        },
+        {
+          "value": "Extended Troughed Trident"
+        },
+        {
+          "value": "Lobular Trident"
+        },
+        {
+          "value": "Lopsided Trident"
+        },
+        {
+          "value": "Madeleine Trident"
+        },
+        {
+          "value": "Many Ridged Trident"
+        },
+        {
+          "value": "Round Bottomed Textured Tulip"
+        },
+        {
+          "value": "Round Ridged Trident"
+        },
+        {
+          "value": "Round Sided Trident"
+        },
+        {
+          "value": "Short Many Ridged Trident"
+        },
+        {
+          "value": "Short Troughed Trident"
+        },
+        {
+          "value": "Six Ridged Troughed Trident"
+        },
+        {
+          "value": "Textured Trident"
+        },
+        {
+          "value": "Thin Ridged Trident"
+        },
+        {
+          "value": "Trident"
+        },
+        {
+          "value": "Trident with One Side Outgrowth"
+        },
+        {
+          "value": "Trident with Pointed Base"
+        },
+        {
+          "value": "Trident with Rounded Base"
+        },
+        {
+          "value": "Two Ridged Trident"
+        },
+        {
+          "value": "Two Ridged Troughed Trident"
+        },
+        {
+          "value": "Wavey Trident"
+        },
+        {
+          "value": "Wide Thin Ridged Trident"
+        },
+        {
+          "value": "Wrapped Trident"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Wedge",
+      "children": [
+        {
+          "value": "Elongated Asymmetrical"
+        },
+        {
+          "value": "Pear Shaped Wedge"
+        },
+        {
+          "value": "Skinny Pear Shaped Wedge"
+        },
+        {
+          "value": "Two Big Lobes"
+        },
+        {
+          "value": "Two Ridged Wedge"
+        },
+        {
+          "value": "Two Sectioned Wedge"
+        },
+        {
+          "value": "Wedged Branching Crown"
+        },
+        {
+          "value": "Whale Blow"
+        },
+        {
+          "value": ""
+        }
+      ]
+    },
+    {
+      "value": "Cat ears"
+    },
+    {
+      "value": "Circular minor-curve spine"
+    },
+    {
+      "value": "Convergent trident"
+    },
+    {
+      "value": "Diverging three-ridged fan"
+    },
+    {
+      "value": "Double-U"
+    },
+    {
+      "value": "Even ridged flipper"
+    },
+    {
+      "value": "Extended Claws"
+    },
+    {
+      "value": "Extended single ridged arrowhead"
+    },
+    {
+      "value": "Extended single ridged spine"
+    },
+    {
+      "value": "Lopsided trident 2"
+    },
+    {
+      "value": "NA"
+    },
+    {
+      "value": "New lopsided trident"
+    },
+    {
+      "value": "Odd-ridged flipper"
+    },
+    {
+      "value": "Ridged diamond morph 1"
+    },
+    {
+      "value": "Short cusped smooth trident"
+    },
+    {
+      "value": "Smooth oval"
+    },
+    {
+      "value": "SOS"
+    },
+    {
+      "value": "Stretched trident"
+    },
+    {
+      "value": "Stubby Claws"
+    },
+    {
+      "value": "Troughed trident with ridge outgrowth"
+    },
+    {
+      "value": "z"
+    }
+  ]
+}
