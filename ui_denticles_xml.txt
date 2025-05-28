@@ -1,0 +1,495 @@
+<View style="display: flex;">
+  
+  <View style="padding: 0em 1em; background: #f1f1f1; margin-right: 1em; border-radius: 3px">
+
+    <Header value="Z1: Ichthyolith Type" />
+    <Taxonomy name="Z1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="Z1: Ichthyolith Type">
+      <Choice alias="Z1.1" value="Z1.1: Tooth"></Choice>
+      <Choice alias="Z1.2" value="Z1.2: Denticle"></Choice>
+      <Choice alias="Z1.3" value="Z1.3: Other microfossil"></Choice>
+      <Choice alias="Z1.4" value="Z1.4: Excess image/artifact"></Choice>
+    </Taxonomy>
+
+    <Header value="Type" />
+    <Taxonomy name="Type" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="Type" apiUrl="s3://amplify-scratch/paleofish/Taxonomies/Type.Taxonomy.json"></Taxonomy>
+
+    <Header value="A1: Shape" />
+    <Taxonomy name="A1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="A1: Shape">
+      <Choice alias="A1.0" value="A1.0: Too broken to code"></Choice>
+      <Choice alias="A1.1" value="A1.1: Spine"></Choice>
+      <Choice alias="A1.2" value="A1.2: Cruciform"></Choice>
+      <Choice alias="A1.3" value="A1.3: Circular or oval"></Choice>
+      <Choice alias="A1.4" value="A1.4: Spade"></Choice>
+      <Choice alias="A1.5" value="A1.5: Diamond/Rectangle/(Can be asymmetrical/kite-like)"></Choice>
+      <Choice alias="A1.6" value="A1.6: Elongated Asymmetrical"></Choice>
+      <Choice alias="A1.7" value="A1.7: Irregular/ other"></Choice>
+      <Choice alias="A1.8" value="A1.8: &quot;Fan-like&quot;"></Choice>
+      <Choice alias="A1.9" value="A1.9: Triangular or Arrow-like"></Choice>
+    </Taxonomy>
+
+    <Header value="A2: Spades" />
+    <Taxonomy name="A2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="A2: Spades">
+      <Choice alias="A2.0" value="A2.0: Not a Spade/too broken to code"></Choice>
+      <Choice alias="A2.1" value="A2.1: Rounded Spade"></Choice>
+      <Choice alias="A2.2" value="A2.2: Squared Spade"></Choice>
+      <Choice alias="A2.3" value="A2.3: Pointed Spade"></Choice>
+      <Choice alias="A2.4" value="A2.4: Stretched Spade"></Choice>
+      <Choice alias="A2.5" value="A2.5: Lobed Spade"></Choice>
+      <Choice alias="A2.6" value="A2.6: Irregular"></Choice>
+    </Taxonomy>
+
+    <Header value="B1: Anterior shape (old Base)" />
+    <Taxonomy name="B1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="B1: Anterior shape (old Base)">
+      <Choice alias="B1.0" value="B1.0: Too broken to code"></Choice>
+      <Choice alias="B1.1" value="B1.1: Straight (flat)"></Choice>
+      <Choice alias="B1.2" value="B1.2: Rounded"></Choice>
+      <Choice alias="B1.3" value="B1.3: Pointed (vertex)"></Choice>
+      <Choice alias="B1.4" value="B1.4: Denticle lacks directionality/Cannot discern anterior"></Choice>
+    </Taxonomy>
+
+    <Header value="B2: Anterior Margin Macro Texture Description" />
+    <Taxonomy name="B2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="B2: Anterior Margin Macro Texture Description">
+      <Choice alias="B2.0" value="B2.0: Too broken to code"></Choice>
+      <Choice alias="B2.1" value="B2.1: Smooth"></Choice>
+      <Choice alias="B2.2" value="B2.2: Scalloped margin texture"></Choice>
+      <Choice alias="B2.3" value="B2.3: Pointed margin texture"></Choice>
+      <Choice alias="B2.4" value="B2.4: Anterior is a vertex"></Choice>
+    </Taxonomy>
+
+    <Header value="B3: Posterior Margin Micro Texture" />
+    <Taxonomy name="B3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="B3: Posterior Margin Micro Texture">
+      <Choice alias="B3.0" value="B3.0: Too broken to code"></Choice>
+      <Choice alias="B3.1" value="B3.1: Smooth"></Choice>
+      <Choice alias="B3.2" value="B3.2: Distinct serrated"></Choice>
+    </Taxonomy>
+
+    <Header value="C1: Posterior shape (old Tip)" />
+    <Taxonomy name="C1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="C1: Posterior shape (old Tip)">
+      <Choice alias="C1.0" value="C1.0: Too broken to code"></Choice>
+      <Choice alias="C1.1" value="C1.1: Straight (flat)"></Choice>
+      <Choice alias="C1.2" value="C1.2: Rounded"></Choice>
+      <Choice alias="C1.3" value="C1.3: Pointed (vertex)"></Choice>
+      <Choice alias="C1.4" value="C1.4: Denticle lacks directionality/Cannot discern posterior"></Choice>
+    </Taxonomy>
+
+    <Header value="C2: Posterior Margin Macro Texture Description" />
+    <Taxonomy name="C2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="C2: Posterior Margin Macro Texture Description">
+      <Choice alias="C2.0" value="C2.0: Too broken to code"></Choice>
+      <Choice alias="C2.1" value="C2.1: Smooth"></Choice>
+      <Choice alias="C2.2" value="C2.2: Scalloped margin texture"></Choice>
+      <Choice alias="C2.3" value="C2.3: Pointed margin texture"></Choice>
+      <Choice alias="C2.4" value="C2.4: Posterior is a vertex"></Choice>
+    </Taxonomy>
+
+    <Header value="C3: Posterior Margin Micro Texture" />
+    <Taxonomy name="C3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="C3: Posterior Margin Micro Texture">
+      <Choice alias="C3.0" value="C3.0: Too broken to code"></Choice>
+      <Choice alias="C3.1" value="C3.1: Smooth"></Choice>
+      <Choice alias="C3.2" value="C3.2: Distinct serrated"></Choice>
+    </Taxonomy>
+
+    <Header value="D1: Planes of Symmetry" />
+    <Taxonomy name="D1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="D1: Planes of Symmetry">
+      <Choice alias="D1.0" value="D1.0: Too broken to code"></Choice>
+      <Choice alias="D1.1" value="D1.1: nan"></Choice>
+      <Choice alias="D1.2" value="D1.2: one"></Choice>
+      <Choice alias="D1.3" value="D1.3: two"></Choice>
+      <Choice alias="D1.4" value="D1.4: radial"></Choice>
+    </Taxonomy>
+
+    <Header value="E1: # of cusps" />
+    <Taxonomy name="E1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E1: # of cusps">
+      <Choice alias="E1.0" value="E1.0: Too broken to code"></Choice>
+      <Choice alias="E1.1" value="E1.1: nan"></Choice>
+      <Choice alias="E1.2" value="E1.2: one"></Choice>
+      <Choice alias="E1.3" value="E1.3: two"></Choice>
+      <Choice alias="E1.4" value="E1.4: three"></Choice>
+      <Choice alias="E1.5" value="E1.5: four"></Choice>
+      <Choice alias="E1.6" value="E1.6: five"></Choice>
+      <Choice alias="E1.7" value="E1.7: six"></Choice>
+      <Choice alias="E1.8" value="E1.8: seven"></Choice>
+      <Choice alias="E1.9" value="E1.9: eight"></Choice>
+      <Choice alias="E1.10" value="E1.10: nine"></Choice>
+      <Choice alias="E1.11" value="E1.11: ten or more"></Choice>
+    </Taxonomy>
+
+    <Header value="E2: Cusps definition" />
+    <Taxonomy name="E2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E2: Cusps definition">
+      <Choice alias="E2.0" value="E2.0: No cusps or too broken to code"></Choice>
+      <Choice alias="E2.1" value="E2.1: Ridges not associated with cusps"></Choice>
+      <Choice alias="E2.2" value="E2.2: Cusps defined by ridges"></Choice>
+      <Choice alias="E2.3" value="E2.3: Some cusps defined by ridges/some ridges associated with cusps"></Choice>
+    </Taxonomy>
+
+    <Header value="E3: Cusp Similarity" />
+    <Taxonomy name="E3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E3: Cusp Similarity">
+      <Choice alias="E3.0" value="E3.0: No cusps/one cusp or too broken to code"></Choice>
+      <Choice alias="E3.1" value="E3.1: Cusps are same length/width/shape"></Choice>
+      <Choice alias="E3.2" value="E3.2: Central cusp is distinct"></Choice>
+      <Choice alias="E3.3" value="E3.3: cusps opposite each other are similar, cusps next to each other are distinct"></Choice>
+      <Choice alias="E3.4" value="E3.4: Irregular"></Choice>
+    </Taxonomy>
+
+    <Header value="E4: Cusp Relative Length" />
+    <Taxonomy name="E4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E4: Cusp Relative Length">
+      <Choice alias="E4.0" value="E4.0: No cusps or too broken to code"></Choice>
+      <Choice alias="E4.1" value="E4.1: ¼ &gt; x"></Choice>
+      <Choice alias="E4.2" value="E4.2: ¼ &lt; x &lt; ½"></Choice>
+      <Choice alias="E4.3" value="E4.3: ½ &lt; x"></Choice>
+    </Taxonomy>
+
+    <Header value="F1: Ridge System" />
+    <Taxonomy name="F1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="F1: Ridge System">
+      <Choice alias="F1.0" value="F1.0: Too broken to code"></Choice>
+      <Choice alias="F1.1" value="F1.1: Smooth"></Choice>
+      <Choice alias="F1.2" value="F1.2: Linear (can tell directionality-anterior/posterior, ridges only curve in a max. 1 way-not wavy)"></Choice>
+      <Choice alias="F1.3" value="F1.3: Geometric (Central branching pattern)"></Choice>
+      <Choice alias="F1.4" value="F1.4: Meandering ridges (ridges curve or intersect in more than 1 way/direction)"></Choice>
+      <Choice alias="F1.5" value="F1.5: Spine"></Choice>
+      <Choice alias="F1.6" value="F1.6: Branching (can tell directionality but ridges curve or intersect in more than 1 way)"></Choice>
+    </Taxonomy>
+
+    <Header value="G1: Number of ridge segments" />
+    <Taxonomy name="G1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="G1: Number of ridge segments">
+      <Choice alias="G1.0" value="G1.0: Too broken to code"></Choice>
+      <Choice alias="G1.1" value="G1.1: nan"></Choice>
+      <Choice alias="G1.2" value="G1.2: one"></Choice>
+      <Choice alias="G1.3" value="G1.3: two"></Choice>
+      <Choice alias="G1.4" value="G1.4: three"></Choice>
+      <Choice alias="G1.5" value="G1.5: four"></Choice>
+      <Choice alias="G1.6" value="G1.6: five"></Choice>
+      <Choice alias="G1.7" value="G1.7: six-ten"></Choice>
+      <Choice alias="G1.8" value="G1.8: eleven or more"></Choice>
+    </Taxonomy>
+
+    <Header value="G2: Number of independent ridges" />
+    <Taxonomy name="G2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="G2: Number of independent ridges">
+      <Choice alias="G2.0" value="G2.0: Too broken to code"></Choice>
+      <Choice alias="G2.1" value="G2.1: nan"></Choice>
+      <Choice alias="G2.2" value="G2.2: one"></Choice>
+      <Choice alias="G2.3" value="G2.3: two"></Choice>
+      <Choice alias="G2.4" value="G2.4: three"></Choice>
+      <Choice alias="G2.5" value="G2.5: four"></Choice>
+      <Choice alias="G2.6" value="G2.6: five"></Choice>
+      <Choice alias="G2.7" value="G2.7: six or more"></Choice>
+    </Taxonomy>
+
+    <Header value="G3: Ridge outgrowths" />
+    <Taxonomy name="G3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="G3: Ridge outgrowths">
+      <Choice alias="G3.0" value="G3.0: no ridges or too broken to code"></Choice>
+      <Choice alias="G3.1" value="G3.1: no ridge outgrowths"></Choice>
+      <Choice alias="G3.2" value="G3.2: one ridge outgrowth"></Choice>
+      <Choice alias="G3.3" value="G3.3: two ridge outgrowths"></Choice>
+    </Taxonomy>
+
+    <Header value="H1: Ridge Orientation" />
+    <Taxonomy name="H1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="H1: Ridge Orientation">
+      <Choice alias="H1.0" value="H1.0: Only one Ridge/No Ridges or too broken to code"></Choice>
+      <Choice alias="H1.1" value="H1.1: Parallel"></Choice>
+      <Choice alias="H1.2" value="H1.2: Converges from anterior"></Choice>
+      <Choice alias="H1.3" value="H1.3: Diverges from anterior"></Choice>
+      <Choice alias="H1.4" value="H1.4: Diverges then converges"></Choice>
+      <Choice alias="H1.5" value="H1.5: Ridges intesect/branch"></Choice>
+      <Choice alias="H1.6" value="H1.6: Apex Radial (spine)"></Choice>
+      <Choice alias="H1.7" value="H1.7: Irregular/other/no discernable anterior/posterior"></Choice>
+      <Choice alias="H1.8" value="H1.8: Multiple"></Choice>
+    </Taxonomy>
+
+    <Header value="I1: Central Ridge(s) or trough Disparity" />
+    <Taxonomy name="I1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="I1: Central Ridge(s) or trough Disparity">
+      <Choice alias="I1.0" value="I1.0: No ridges or too broken to code"></Choice>
+      <Choice alias="I1.1" value="I1.1: No central ridge"></Choice>
+      <Choice alias="I1.2" value="I1.2: Only one Ridge"></Choice>
+      <Choice alias="I1.3" value="I1.3: Same as other ridges"></Choice>
+      <Choice alias="I1.4" value="I1.4: Distinct shape/size from other ridges"></Choice>
+    </Taxonomy>
+
+    <Header value="I2: Central Ridge Directionality" />
+    <Taxonomy name="I2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="I2: Central Ridge Directionality">
+      <Choice alias="I2.0" value="I2.0: None or too broken to code"></Choice>
+      <Choice alias="I2.1" value="I2.1: Straight"></Choice>
+      <Choice alias="I2.2" value="I2.2: Curved"></Choice>
+      <Choice alias="I2.3" value="I2.3: Meandering"></Choice>
+    </Taxonomy>
+
+    <Header value="I3: Central Ridge Width" />
+    <Taxonomy name="I3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="I3: Central Ridge Width">
+      <Choice alias="I3.0" value="I3.0: None or too broken to code"></Choice>
+      <Choice alias="I3.1" value="I3.1: Parallel"></Choice>
+      <Choice alias="I3.2" value="I3.2: Triangular widening from anterior"></Choice>
+      <Choice alias="I3.3" value="I3.3: Triangular thinning from anterior"></Choice>
+      <Choice alias="I3.4" value="I3.4: Diamond-like"></Choice>
+      <Choice alias="I3.5" value="I3.5: Creates a Central Trough"></Choice>
+      <Choice alias="I3.6" value="I3.6: Irregular"></Choice>
+    </Taxonomy>
+
+    <Header value="J1: Non-Central Ridge Directionality" />
+    <Taxonomy name="J1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="J1: Non-Central Ridge Directionality">
+      <Choice alias="J1.0" value="J1.0: None/only one ridge or too broken to code"></Choice>
+      <Choice alias="J1.1" value="J1.1: Straight"></Choice>
+      <Choice alias="J1.2" value="J1.2: Concave Curved"></Choice>
+      <Choice alias="J1.3" value="J1.3: Convex Curved"></Choice>
+      <Choice alias="J1.4" value="J1.4: Meandering"></Choice>
+      <Choice alias="J1.5" value="J1.5: Combination"></Choice>
+    </Taxonomy>
+
+    <Header value="J2: Non Central Ridge Width" />
+    <Taxonomy name="J2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="J2: Non Central Ridge Width">
+      <Choice alias="J2.0" value="J2.0: None or too broken to code"></Choice>
+      <Choice alias="J2.1" value="J2.1: Parallel"></Choice>
+      <Choice alias="J2.2" value="J2.2: Triangular widening from anterior"></Choice>
+      <Choice alias="J2.3" value="J2.3: Triangular thinning from anterior"></Choice>
+      <Choice alias="J2.4" value="J2.4: Diamond-like"></Choice>
+      <Choice alias="J2.5" value="J2.5: Creates Troughs"></Choice>
+      <Choice alias="J2.6" value="J2.6: Irregular/ Combination"></Choice>
+    </Taxonomy>
+
+    <Header value="K1: Central Ridge System Shape" />
+    <Taxonomy name="K1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="K1: Central Ridge System Shape">
+      <Choice alias="K1.0" value="K1.0: No Ridges or too broken to code"></Choice>
+      <Choice alias="K1.1" value="K1.1: Ridges present but no central shape observed"></Choice>
+      <Choice alias="K1.2" value="K1.2: Circular/oval"></Choice>
+      <Choice alias="K1.3" value="K1.3: Triangular"></Choice>
+      <Choice alias="K1.4" value="K1.4: Quadrilateral"></Choice>
+      <Choice alias="K1.5" value="K1.5: Pentagonal"></Choice>
+      <Choice alias="K1.6" value="K1.6: Hexagon"></Choice>
+      <Choice alias="K1.7" value="K1.7: Heptagon"></Choice>
+      <Choice alias="K1.8" value="K1.8: Mound"></Choice>
+      <Choice alias="K1.9" value="K1.9: Octagon"></Choice>
+      <Choice alias="K1.10" value="K1.10: Multiple"></Choice>
+      <Choice alias="K1.11" value="K1.11: Irregular"></Choice>
+    </Taxonomy>
+
+    <Header value="K2: Central Ridge System Shape planes of symmetry" />
+    <Taxonomy name="K2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="K2: Central Ridge System Shape planes of symmetry">
+      <Choice alias="K2.0" value="K2.0: No central shape or too broken to code"></Choice>
+      <Choice alias="K2.1" value="K2.1: central shape but no plane of symmetry"></Choice>
+      <Choice alias="K2.2" value="K2.2: one"></Choice>
+      <Choice alias="K2.3" value="K2.3: two"></Choice>
+      <Choice alias="K2.4" value="K2.4: radial"></Choice>
+    </Taxonomy>
+
+    <Header value="L1: Ridge length" />
+    <Taxonomy name="L1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="L1: Ridge length">
+      <Choice alias="L1.0" value="L1.0: Too broken to code"></Choice>
+      <Choice alias="L1.1" value="L1.1: No Ridges"></Choice>
+      <Choice alias="L1.2" value="L1.2: Ridge length=lateral length"></Choice>
+      <Choice alias="L1.3" value="L1.3: Ridge ends mid crown/ Ridge begins mid crown"></Choice>
+      <Choice alias="L1.4" value="L1.4: Ridge begins and ends mid crown"></Choice>
+      <Choice alias="L1.5" value="L1.5: Includes ridges described by a combination of 1,2,3"></Choice>
+    </Taxonomy>
+
+    <Header value="L2: Ridge Definition" />
+    <Taxonomy name="L2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="L2: Ridge Definition">
+      <Choice alias="L2.0" value="L2.0: No Ridges or too broken to code"></Choice>
+      <Choice alias="L2.1" value="L2.1: Not Clearly Defined"></Choice>
+      <Choice alias="L2.2" value="L2.2: Clearly defined on part of the crown but gets shallower and does not extend to full length of denticle"></Choice>
+      <Choice alias="L2.3" value="L2.3: Clearly Defined"></Choice>
+      <Choice alias="L2.4" value="L2.4: Only the central ridge is clearly defined"></Choice>
+    </Taxonomy>
+
+    <Header value="L3: Ridge/Ridge Height" />
+    <Taxonomy name="L3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="L3: Ridge/Ridge Height">
+      <Choice alias="L3.0" value="L3.0: None or too broken to code"></Choice>
+      <Choice alias="L3.1" value="L3.1: Only one ridge"></Choice>
+      <Choice alias="L3.2" value="L3.2: equal ridge heights"></Choice>
+      <Choice alias="L3.3" value="L3.3: Variable ridge height"></Choice>
+    </Taxonomy>
+
+    <Header value="L4: Ridge/Trough Angularity" />
+    <Taxonomy name="L4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="L4: Ridge/Trough Angularity">
+      <Choice alias="L4.0" value="L4.0: No ridges or too broken to code"></Choice>
+      <Choice alias="L4.1" value="L4.1: Ridge profiles or trough are rounded"></Choice>
+      <Choice alias="L4.2" value="L4.2: Ridge profiles or troughs are triangular"></Choice>
+      <Choice alias="L4.3" value="L4.3: Ridge profiles or troughs are funnel shapes (rounded with a skinnier point)"></Choice>
+      <Choice alias="L4.4" value="L4.4: Ridge profiles or troughs are variable or described by another shape"></Choice>
+      <Choice alias="L4.5" value="L4.5: Ridge profiles or troughs are rectangular"></Choice>
+    </Taxonomy>
+
+    <Header value="M1: # of depression" />
+    <Taxonomy name="M1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="M1: # of depression">
+      <Choice alias="M1.0" value="M1.0: Too broken to code"></Choice>
+      <Choice alias="M1.1" value="M1.1: nan"></Choice>
+      <Choice alias="M1.2" value="M1.2: one"></Choice>
+      <Choice alias="M1.3" value="M1.3: two"></Choice>
+      <Choice alias="M1.4" value="M1.4: three"></Choice>
+      <Choice alias="M1.5" value="M1.5: four"></Choice>
+      <Choice alias="M1.6" value="M1.6: five or more"></Choice>
+      <Choice alias="M1.7" value="M1.7: Multiple depressions (&gt;2) but denticle is broken so unable to discern precise number"></Choice>
+    </Taxonomy>
+
+    <Header value="M2: Depression(s) type" />
+    <Taxonomy name="M2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="M2: Depression(s) type">
+      <Choice alias="M2.0" value="M2.0: No depression or too broken to code"></Choice>
+      <Choice alias="M2.1" value="M2.1: Thumbprint (surface layer)"></Choice>
+      <Choice alias="M2.2" value="M2.2: Open tunnel (partially covered)"></Choice>
+      <Choice alias="M2.3" value="M2.3: Dimples (depressions surrounded by ridges)"></Choice>
+    </Taxonomy>
+
+    <Header value="M3: Location of depression" />
+    <Taxonomy name="M3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="M3: Location of depression">
+      <Choice alias="M3.0" value="M3.0: No depression or too broken to code"></Choice>
+      <Choice alias="M3.1" value="M3.1: Central depression"></Choice>
+      <Choice alias="M3.2" value="M3.2: Close to edge depression"></Choice>
+      <Choice alias="M3.3" value="M3.3: Both central and edge depressions"></Choice>
+    </Taxonomy>
+
+    <Header value="M4: Shape of dimple(s)" />
+    <Taxonomy name="M4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="M4: Shape of dimple(s)">
+      <Choice alias="M4.0" value="M4.0: none or too broken to code"></Choice>
+      <Choice alias="M4.1" value="M4.1: circle"></Choice>
+      <Choice alias="M4.2" value="M4.2: Elongated"></Choice>
+      <Choice alias="M4.3" value="M4.3: Teardrop (smooth curve)"></Choice>
+      <Choice alias="M4.4" value="M4.4: Square/quadrilateral"></Choice>
+      <Choice alias="M4.5" value="M4.5: Pentagon"></Choice>
+      <Choice alias="M4.6" value="M4.6: Irregular"></Choice>
+      <Choice alias="M4.7" value="M4.7: Multiple different shapes"></Choice>
+    </Taxonomy>
+
+    <Header value="N1: Secondary Ridge Features" />
+    <Taxonomy name="N1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="N1: Secondary Ridge Features">
+      <Choice alias="N1.0" value="N1.0: Too broken to code"></Choice>
+      <Choice alias="N1.1" value="N1.1: No Ridges"></Choice>
+      <Choice alias="N1.2" value="N1.2: No secondary ridge features"></Choice>
+      <Choice alias="N1.3" value="N1.3: Micro-reliefs on ridges"></Choice>
+      <Choice alias="N1.4" value="N1.4: Honeycomb surface texture"></Choice>
+      <Choice alias="N1.5" value="N1.5: Wavy surface texture"></Choice>
+      <Choice alias="N1.6" value="N1.6: Honeycomb/wavey combination surface texture"></Choice>
+      <Choice alias="N1.7" value="N1.7: Vertical protrusion(s) on ridges"></Choice>
+      <Choice alias="N1.8" value="N1.8: Pockmarks"></Choice>
+    </Taxonomy>
+
+    <Header value="N2: Surface Texture Location" />
+    <Taxonomy name="N2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="N2: Surface Texture Location">
+      <Choice alias="N2.0" value="N2.0: None/too broken to code"></Choice>
+      <Choice alias="N2.1" value="N2.1: Ridges only"></Choice>
+      <Choice alias="N2.2" value="N2.2: Crown and ridges"></Choice>
+      <Choice alias="N2.3" value="N2.3: Crown except ridges"></Choice>
+      <Choice alias="N2.4" value="N2.4: Anterior of crown only"></Choice>
+      <Choice alias="N2.5" value="N2.5: Middle of crown only"></Choice>
+      <Choice alias="N2.6" value="N2.6: Posterior of crown only"></Choice>
+      <Choice alias="N2.7" value="N2.7: Edges of crown only"></Choice>
+    </Taxonomy>
+
+    <Header value="N3: Surface Texture Coverage" />
+    <Taxonomy name="N3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="N3: Surface Texture Coverage">
+      <Choice alias="N3.0" value="N3.0: None/too broken to code"></Choice>
+      <Choice alias="N3.1" value="N3.1: Less than 30%"></Choice>
+      <Choice alias="N3.2" value="N3.2: Between 30% and 70%"></Choice>
+      <Choice alias="N3.3" value="N3.3: Greater than 70%"></Choice>
+    </Taxonomy>
+
+    <Header value="O1: Overall base shape" />
+    <Taxonomy name="O1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="O1: Overall base shape">
+      <Choice alias="O1.0" value="O1.0: Base not preserved/too broken to code"></Choice>
+      <Choice alias="O1.1" value="O1.1: Kite shaped"></Choice>
+      <Choice alias="O1.2" value="O1.2: Kite/cruciform shaped"></Choice>
+      <Choice alias="O1.3" value="O1.3: Kite/cruciform shaped missing 1/4 of the cross ridges/extensions"></Choice>
+      <Choice alias="O1.4" value="O1.4: Rhombus shaped"></Choice>
+      <Choice alias="O1.5" value="O1.5: Rounded rhombus"></Choice>
+      <Choice alias="O1.6" value="O1.6: Stretched rhombus"></Choice>
+      <Choice alias="O1.7" value="O1.7: Trapazoid/rhombus hybrid (rhombus like but with a flat anterior edge)"></Choice>
+      <Choice alias="O1.8" value="O1.8: Oval/oval like"></Choice>
+      <Choice alias="O1.9" value="O1.9: Circular"></Choice>
+      <Choice alias="O1.10" value="O1.10: Tree roots (irregular with many radiating ridges)"></Choice>
+      <Choice alias="O1.11" value="O1.11: Mirrors crown shape"></Choice>
+      <Choice alias="O1.12" value="O1.12: Base mirrors crown shape and there is no distinct separation between crown and base (no peduncle)"></Choice>
+    </Taxonomy>
+
+    <Header value="O2: Base width/length" />
+    <Taxonomy name="O2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="O2: Base width/length">
+      <Choice alias="O2.0" value="O2.0: Base not preserved/too broken to code"></Choice>
+      <Choice alias="O2.1" value="O2.1: Equal width and length"></Choice>
+      <Choice alias="O2.2" value="O2.2: Wider than long"></Choice>
+      <Choice alias="O2.3" value="O2.3: Longer than wide"></Choice>
+      <Choice alias="O2.4" value="O2.4: Unequal width and length (no directionality)"></Choice>
+    </Taxonomy>
+
+    <Header value="O3: Crown to base ratio" />
+    <Taxonomy name="O3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="O3: Crown to base ratio">
+      <Choice alias="O3.0" value="O3.0: Base not preserved/too broken to code"></Choice>
+      <Choice alias="O3.1" value="O3.1: Crown and base have the same area"></Choice>
+      <Choice alias="O3.2" value="O3.2: Crown has a larger area"></Choice>
+      <Choice alias="O3.3" value="O3.3: Base has a larger area"></Choice>
+    </Taxonomy>
+
+    <Header value="O4: Number of Grooves" />
+    <Taxonomy name="O4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="O4: Number of Grooves">
+      <Choice alias="O4.0" value="O4.0: Base not preserved/too broken to code"></Choice>
+      <Choice alias="O4.1" value="O4.1: No grooves, completely rounded/smooth"></Choice>
+      <Choice alias="O4.2" value="O4.2: One"></Choice>
+      <Choice alias="O4.3" value="O4.3: Two"></Choice>
+      <Choice alias="O4.4" value="O4.4: Three"></Choice>
+      <Choice alias="O4.5" value="O4.5: Four"></Choice>
+      <Choice alias="O4.6" value="O4.6: Five"></Choice>
+      <Choice alias="O4.7" value="O4.7: Six (plus)"></Choice>
+    </Taxonomy>
+
+    <Header value="O5: Root foramen opening shape" />
+    <Taxonomy name="O5" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="O5: Root foramen opening shape">
+      <Choice alias="O5.0" value="O5.0: Base not preserved/too broken to code"></Choice>
+      <Choice alias="O5.1" value="O5.1: No root opening"></Choice>
+      <Choice alias="O5.2" value="O5.2: Rhombus"></Choice>
+      <Choice alias="O5.3" value="O5.3: Elipse"></Choice>
+      <Choice alias="O5.4" value="O5.4: Arc"></Choice>
+      <Choice alias="O5.5" value="O5.5: Mirrors base shape with more rounded edges"></Choice>
+    </Taxonomy>
+
+    <Header value="O6: Root foramen location" />
+    <Taxonomy name="O6" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="O6: Root foramen location">
+      <Choice alias="O6.0" value="O6.0: No root opening or base not preserved/too broken to code"></Choice>
+      <Choice alias="O6.1" value="O6.1: Center of base"></Choice>
+      <Choice alias="O6.2" value="O6.2: Anterior of base"></Choice>
+      <Choice alias="O6.3" value="O6.3: Posterior of base"></Choice>
+    </Taxonomy>
+
+    <Header value="O7: Peduncle height:width" />
+    <Taxonomy name="O7" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="O7: Peduncle height:width">
+      <Choice alias="O7.0" value="O7.0: Base not preserved/too broken to code"></Choice>
+      <Choice alias="O7.1" value="O7.1: Equal width and height"></Choice>
+      <Choice alias="O7.2" value="O7.2: Wider than height"></Choice>
+      <Choice alias="O7.3" value="O7.3: Higher than width"></Choice>
+      <Choice alias="O7.4" value="O7.4: No Peduncle (sits flat on surface)"></Choice>
+    </Taxonomy>
+
+    <Header value="O8: Crown:root angle" />
+    <Taxonomy name="O8" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="O8: Crown:root angle">
+      <Choice alias="O8.0" value="O8.0: Base not preserved/too broken to code"></Choice>
+      <Choice alias="O8.1" value="O8.1: Perpendicular (Crown pointing directly up from base, e.g. spine)"></Choice>
+      <Choice alias="O8.2" value="O8.2: Obtuse (Crown pointing away from base)"></Choice>
+      <Choice alias="O8.3" value="O8.3: Parallel (Crown directly over Base)"></Choice>
+      <Choice alias="O8.4" value="O8.4: Acute (Crown pointing towards base)"></Choice>
+    </Taxonomy>
+
+    <Header value="O9: Base to crown connection location" />
+    <Taxonomy name="O9" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="O9: Base to crown connection location">
+      <Choice alias="O9.0" value="O9.0: Base not preserved/too broken to code"></Choice>
+      <Choice alias="O9.1" value="O9.1: at anterior of crown"></Choice>
+      <Choice alias="O9.2" value="O9.2: at center of crown"></Choice>
+      <Choice alias="O9.3" value="O9.3: at posterior of crown"></Choice>
+    </Taxonomy>
+
+    <Header value="O10: Mound" />
+    <Taxonomy name="O10" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="O10: Mound">
+      <Choice alias="O10.0" value="O10.0: Base not preserved/too broken to code"></Choice>
+      <Choice alias="O10.1" value="O10.1: Not mounded"></Choice>
+      <Choice alias="O10.2" value="O10.2: Mounded"></Choice>
+    </Taxonomy>
+
+  
+  </View>
+  
+
+  <View style="padding: 0em 1em; background: #f1f1f1; margin-right: 1em; border-radius: 3px; width:100%">
+    <View style="position: sticky; top: 0;">
+
+      <View style="display: flex;">
+      	<Text name="pid" value="$pid"></Text>
+      	<Text name="magnification" value="$magnification"></Text>   
+      </View>
+      <Image name="image" value="$image"/>
+
+    </View>
+  </View>
+
+</View>
