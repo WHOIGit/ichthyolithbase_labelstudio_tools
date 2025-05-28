@@ -39,8 +39,12 @@ def read_fields(field_args):
     fields = []
     for field in field_args:
         if os.path.isfile(field):
-            with open(field) as f:
-                fields.extend( f.read().strip().splitlines() )
+                with open(field) as f:
+                    if field.endswith('.json'):
+                        json_dict = json.load(f)
+                        fields.extend( json_dict.keys() )
+                    else:
+                        fields.extend( f.read().strip().splitlines() )
         else:
             fields.append(field)
     return fields
@@ -110,7 +114,7 @@ def update_cachelabels(host:str, token:str, project_id:int, control_tags:list, w
         if timeout_views:
             for view_id in timeout_views:
                 pbar.set_description(f'Updating "{tag}" (view_id={view_id})')
-                update_cachelabel(LABEL_STUDIO_HOST, API_KEY, PROJECT_ID, tag, with_counters, view_id=view_id)
+                update_cachelabel(host, token, project_id, tag, with_counters, view_id=view_id)
         else:
             pbar.set_description(f'Updating "{tag}"')
             update_cachelabel(host, token, project_id, tag, with_counters)
@@ -121,12 +125,6 @@ def main():
     args = parse_arguments()
     token = read_token(args.token)
     fields = read_fields(args.fields)
-    
-    # Connect to the Label Studio API
-    ls = LabelStudio(base_url=args.host, api_key=token)
-
-    # Get the project
-    project = ls.projects.get(id=args.project)
 
     # Update the fields
     update_cachelabels(args.host, token, args.project, fields)
