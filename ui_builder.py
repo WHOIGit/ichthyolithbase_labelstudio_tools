@@ -12,7 +12,7 @@ from label_studio_sdk.client import LabelStudio
 
 def parse_arguments():
     """Parse command-line arguments."""
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description='Build a Label Studio Labeling Interface from an annotations config yaml and xml template')
 
     parser.add_argument('--template', required=True, metavar='XML', help='Label Interface Template File')
     parser.add_argument('--config', required=True, metavar='YAML', help='Annotation fields yaml')
@@ -105,8 +105,11 @@ def main():
 
     else:
         print(full_xml)
-    
 
+    # TODO conenct with LS instance to CHECK existing annotation fields
+    #      make sure only ADDING new fields or editing placeholder
+
+    # TODO pull and download config as yaml, probably a separate script
 
 
 
