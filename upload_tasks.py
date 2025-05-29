@@ -72,12 +72,12 @@ def ls_create_task(host: str, token: str, project: int, task:dict):
     if 'annotations' in payload: payload.pop('annotations')
 
     payload['project'] = project
-
+    # todo idempotency, check for pid before uploading a new pid
     response = requests.post(url, json=payload, headers=headers)
 
     # Check if the request was successful
     if response.status_code != 201:
-        print(f"Failed to retrieve data: {response.status_code} {response.json()}")
+        print(f"Failed to retrieve data: {response.status_code} {response.content}")
     return response.json()['id']
 
 
@@ -91,7 +91,7 @@ def ls_create_annotation(host: str, token: str, task: dict, task_id:int):
 
     # Check if the request was successful
     if response.status_code != 201:
-        print(f"Failed to retrieve data: {response.status_code} {response.json()}")
+        print(f"Failed to retrieve data: {response.status_code} {response.content}")
 
     return response.json()['id']
 
@@ -102,9 +102,7 @@ def ls_create_prediction(host: str, token: str, task: dict, task_id:int):
 
     payload = dict(
         task = task_id,
-        result = task['annotations'][0]['result'],
-        score = 0.666,
-        model_version = 'human'
+        result = task['annotations'][0]['result']
     )
 
     response = requests.post(url, json=payload, headers=headers)
@@ -175,10 +173,14 @@ def main():
 
     df = pd.read_csv(args.CSV)
 
+    start_from = 'DSDP-596_P087_035_3H_2W_55-58cm_g106_N1_obj00210'
+    x=df[df.pid==start_from].index[0]
+    df = df.iloc[x+1:]
+
     # Load configuration and data
     print("Loading configuration and data...")
     cats = load_config(args.denticle_codes)
-    codegroups = list(cats.keys())
+    codegroups = list(cats.keys()) + ['Type']
 
     # Create S3 client
     if args.s3_config:
@@ -188,26 +190,38 @@ def main():
 
     if args.ls_config:
         ls_config = load_config(args.ls_config)
+        project = ls_config.pop('project')
 
     # Create tasks for all rows
     print("Creating tasks...")
-    s3_pattern = 's3://amplify-scratch/paleofish/{}.jpg'
-    for _, row in tqdm(df.iterrows()):
+    s3_pattern = 's3://amplify-scratch/paleofish/{}.jpg'  # TODO don't hard code this
+    failed_tasks = []
+    for _, row in tqdm(df.iterrows(), total=len(df)):
         task = build_task(row, codegroups, s3_pattern=s3_pattern, prediction=args.prediction)
 
         if args.ls_config:
-            task_id = ls_create_task(task=task, **ls_config)
-            project = ls_config.pop('project')
-            if args.prediction:
-                ls_create_prediction(**ls_config, task=task, task_id=task_id)
-            else:
-                ls_create_annotation(**ls_config, task=task, task_id=task_id)
+            try:
+                task_id = ls_create_task(task=task, project=project, **ls_config)
+            except:
+                failed_tasks.append(('create-task-failed',row.pid))
+                continue
+            try:
+                if args.prediction:
+                    ls_create_prediction(**ls_config, task=task, task_id=task_id)
+                else:
+                    ls_create_annotation(**ls_config, task=task, task_id=task_id)
+            except KeyError:
+                failed_tasks.append(('no-annotation', task_id, row.pid))
 
         if args.s3_config:
-            upload_image(row, task, s3_client, bucket)
+            try:
+                upload_image(row, task, s3_client, bucket)
+            except:
+                failed_tasks.append(('img-upload', row.pid))
 
-        break
 
+    for task in failed_tasks:
+        print(task)
 
 if __name__ == "__main__":
     main()
