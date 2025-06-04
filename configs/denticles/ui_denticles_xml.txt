@@ -11,7 +11,7 @@
     </Taxonomy>
 
     <Header value="Type" />
-    <Taxonomy name="Type" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="Type" apiUrl="s3://amplify-scratch/paleofish/Taxonomies/Type.Taxonomy.json"></Taxonomy>
+    <Taxonomy name="Type" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="Type" apiUrl="s3://ichthyolith/misc/denticles.Type.Taxonomy.json"></Taxonomy>
 
     <Header value="A1: Shape" />
     <Taxonomy name="A1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="A1: Shape">

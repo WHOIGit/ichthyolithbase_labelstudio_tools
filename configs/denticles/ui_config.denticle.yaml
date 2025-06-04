@@ -23,7 +23,7 @@ fields:
   Type:
     <<: *Taxonomy_defaults
     placeholder: 'Type'
-    apiUrl: "s3://amplify-scratch/paleofish/Taxonomies/Type.Taxonomy.json"
+    apiUrl: "s3://ichthyolith/misc/denticle.Type.Taxonomy.json"
 
   A1:
     <<: *Taxonomy_defaults

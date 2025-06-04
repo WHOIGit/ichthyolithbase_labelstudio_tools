@@ -1,0 +1,781 @@
+{
+  "items": [
+    {
+      "value": "1/2 bladed curved cone"
+    },
+    {
+      "value": "1/2 concave root"
+    },
+    {
+      "value": "1/2 concave root cone"
+    },
+    {
+      "value": "1/2 concave root flared blades"
+    },
+    {
+      "value": "1/2 concave root wide base"
+    },
+    {
+      "value": "1/2 dome root lower barb"
+    },
+    {
+      "value": "1/2 dome root triangle"
+    },
+    {
+      "value": "1/2 funnel root flared blades"
+    },
+    {
+      "value": "1/2 root cone"
+    },
+    {
+      "value": "1/2 straight root"
+    },
+    {
+      "value": "1/2 straight root convex triangle"
+    },
+    {
+      "value": "1/2 total root cone"
+    },
+    {
+      "value": "1/2 total root curved convex cone"
+    },
+    {
+      "value": "1/2 wide funnel root"
+    },
+    {
+      "value": "1/4 barb cone"
+    },
+    {
+      "value": "1/4 dome root concave triangle"
+    },
+    {
+      "value": "1/4 dome root cone"
+    },
+    {
+      "value": "1/4 dome root cone no cap"
+    },
+    {
+      "value": "1/4 dome root convex cone"
+    },
+    {
+      "value": "1/4 dome root curved cone"
+    },
+    {
+      "value": "1/4 dome root triangle"
+    },
+    {
+      "value": "1/4 dome straight blades"
+    },
+    {
+      "value": "1/4 straight root"
+    },
+    {
+      "value": "1/4 straight root cone"
+    },
+    {
+      "value": "1/4 total root cone"
+    },
+    {
+      "value": "1/4 total root cone no cap"
+    },
+    {
+      "value": "3-part major curved cone"
+    },
+    {
+      "value": "3/4 funnel root"
+    },
+    {
+      "value": "3/4 root cone"
+    },
+    {
+      "value": "3/4 root tucked base cone"
+    },
+    {
+      "value": "3/4 rounded root"
+    },
+    {
+      "value": "3/4 total funnel root"
+    },
+    {
+      "value": "3/4 total root bladed cone"
+    },
+    {
+      "value": "3/4 total root cone"
+    },
+    {
+      "value": "Allen-wrench cone"
+    },
+    {
+      "value": "Arrowhead triangle"
+    },
+    {
+      "value": "Asymmetric 1/2 vase root"
+    },
+    {
+      "value": "Asymmetric bladed cone"
+    },
+    {
+      "value": "Asymmetrical 3/4 funnel root"
+    },
+    {
+      "value": "Asymmetrical flared triangle"
+    },
+    {
+      "value": "Asymmetrical root right-angle cone"
+    },
+    {
+      "value": "Asymmetrical-deep 1/2 root"
+    },
+    {
+      "value": "Bicuspid long cone"
+    },
+    {
+      "value": "Bladed cone 1/3 dome root"
+    },
+    {
+      "value": "Bladed recurved cone"
+    },
+    {
+      "value": "Bumpy bladed triangle"
+    },
+    {
+      "value": "Cap tip arrow triangle"
+    },
+    {
+      "value": "Cinched top cone"
+    },
+    {
+      "value": "Convex 1/2 dome root"
+    },
+    {
+      "value": "Convex 1/2 root"
+    },
+    {
+      "value": "Convex 1/2 root flared blades"
+    },
+    {
+      "value": "Convex 1/2 rough straight root"
+    },
+    {
+      "value": "Convex 3/4 funnel"
+    },
+    {
+      "value": "Convex 3/4 root"
+    },
+    {
+      "value": "Convex Multi-pronged"
+    },
+    {
+      "value": "Convex cone 1/2 dome root"
+    },
+    {
+      "value": "Convex cone total root"
+    },
+    {
+      "value": "Convex curved cone 3/4 total root"
+    },
+    {
+      "value": "Convex curved cone upper 3/4 blades"
+    },
+    {
+      "value": "Convex rootless cone"
+    },
+    {
+      "value": "Convex triangle 1/2 convex root"
+    },
+    {
+      "value": "Convex triangle 1/2 funnel root"
+    },
+    {
+      "value": "Convex triangle 1/2 total root"
+    },
+    {
+      "value": "Convex triangle 1/2 vase root"
+    },
+    {
+      "value": "Convex triangle 3/4 funnel root"
+    },
+    {
+      "value": "Convex triangle full convex root"
+    },
+    {
+      "value": "Curl curved 1/2 total root triangle"
+    },
+    {
+      "value": "Curl curved triangle 1/4 total root"
+    },
+    {
+      "value": "Curl-curved triangle 1/2 convex root"
+    },
+    {
+      "value": "Curved 1/2 Barb"
+    },
+    {
+      "value": "Curved 1/2 dome root triangle"
+    },
+    {
+      "value": "Curved 1/2 total funnel root triangle"
+    },
+    {
+      "value": "Curved 1/4 barb"
+    },
+    {
+      "value": "Curved 2/3 convex root triangle"
+    },
+    {
+      "value": "Curved big blade"
+    },
+    {
+      "value": "Curved cone 1/2 total root"
+    },
+    {
+      "value": "Curved cone 1/4 total root"
+    },
+    {
+      "value": "Curved convex cone distinct cap"
+    },
+    {
+      "value": "Curved deep triangle"
+    },
+    {
+      "value": "Curved distinct cap flared base"
+    },
+    {
+      "value": "Curved full straight root"
+    },
+    {
+      "value": "Curved funnel root cone"
+    },
+    {
+      "value": "Curved furrowed cone"
+    },
+    {
+      "value": "Curved long 1/4 dome root"
+    },
+    {
+      "value": "Curved medium cone convex root"
+    },
+    {
+      "value": "Curved medium cone dome root"
+    },
+    {
+      "value": "Curved square 1/2 total root cone"
+    },
+    {
+      "value": "Curved thin root"
+    },
+    {
+      "value": "Curved triangle 1/2 convex root"
+    },
+    {
+      "value": "Curved triangle 3/4 concave root"
+    },
+    {
+      "value": "Curved triangle full concave root"
+    },
+    {
+      "value": "Curved two part curved tip"
+    },
+    {
+      "value": "Deep dome root flared blades"
+    },
+    {
+      "value": "Deep full straight root"
+    },
+    {
+      "value": "Domal bi-cusp"
+    },
+    {
+      "value": "Elongated 1/2 straight root"
+    },
+    {
+      "value": "Elongated 1/2 total root cone"
+    },
+    {
+      "value": "Elongated 1/2 total root cone no cap"
+    },
+    {
+      "value": "Elongated 1/4 straight root cone"
+    },
+    {
+      "value": "Elongated convex root cone"
+    },
+    {
+      "value": "Elongated curved bladed cone"
+    },
+    {
+      "value": "Elongated extended concave root"
+    },
+    {
+      "value": "Elongated flared base"
+    },
+    {
+      "value": "Elongated side-curved bladed cone"
+    },
+    {
+      "value": "Elongated straight bladed cone"
+    },
+    {
+      "value": "Elongated two part medium tip"
+    },
+    {
+      "value": "Elongated two part squat tip"
+    },
+    {
+      "value": "Extended straight root"
+    },
+    {
+      "value": "Extended tip two part funnel cone "
+    },
+    {
+      "value": "Extra flared base triangle"
+    },
+    {
+      "value": "Extra-long 1/4 total root cone"
+    },
+    {
+      "value": "Extra-long 3/4 total funnel bladed cone"
+    },
+    {
+      "value": "Extra-long curved cone"
+    },
+    {
+      "value": "Extra-long curved middle barb cone"
+    },
+    {
+      "value": "Extra-long curved two part straight tip"
+    },
+    {
+      "value": "Extra-long spiraling striation"
+    },
+    {
+      "value": "Extra-long straight cone"
+    },
+    {
+      "value": "Fingernail"
+    },
+    {
+      "value": "Flared base 1/4 dome root"
+    },
+    {
+      "value": "Flared base 1/4 dome root"
+    },
+    {
+      "value": "Flared base 3/4 funnel root"
+    },
+    {
+      "value": "Flared base narrow curve horn"
+    },
+    {
+      "value": "Flat extended root"
+    },
+    {
+      "value": "Flat full root"
+    },
+    {
+      "value": "Flat funnel root"
+    },
+    {
+      "value": "Flat right triangle big blade"
+    },
+    {
+      "value": "Full funnel root funnel triangle"
+    },
+    {
+      "value": "Full root asymmetrical blades"
+    },
+    {
+      "value": "Full root big blade barb"
+    },
+    {
+      "value": "Full root convex triangle"
+    },
+    {
+      "value": "Full root flared blades"
+    },
+    {
+      "value": "Full root medium cone"
+    },
+    {
+      "value": "Full-length funnel root cone"
+    },
+    {
+      "value": "Full-length straight root cone"
+    },
+    {
+      "value": "Funnel root cone"
+    },
+    {
+      "value": "Funnel triangle 1/2 convex root"
+    },
+    {
+      "value": "Funnel-shaped full root *DRAFT*"
+    },
+    {
+      "value": "Generic cone"
+    },
+    {
+      "value": "Generic triangle"
+    },
+    {
+      "value": "Horseshoe"
+    },
+    {
+      "value": "Inner blade tucked base cone"
+    },
+    {
+      "value": "Jaw"
+    },
+    {
+      "value": "Large blades 1/2 convex root triangle"
+    },
+    {
+      "value": "Lipped cone"
+    },
+    {
+      "value": "Long 1/2 dome root triangle"
+    },
+    {
+      "value": "Long 1/4 dome root"
+    },
+    {
+      "value": "Long 1/4 total root"
+    },
+    {
+      "value": "Long 1/4 total root cone"
+    },
+    {
+      "value": "Long 3/4 straight root"
+    },
+    {
+      "value": "Long 3/4 straight root straight blades"
+    },
+    {
+      "value": "Long 3/4 total root triangle"
+    },
+    {
+      "value": "Long Lipped Cone"
+    },
+    {
+      "value": "Long cone 1/2 convex root"
+    },
+    {
+      "value": "Long convex triangle"
+    },
+    {
+      "value": "Long convex triangle 3/4 concave root"
+    },
+    {
+      "value": "Long convex triangle total funnel root"
+    },
+    {
+      "value": "Long curved cone 1/2 total root"
+    },
+    {
+      "value": "Long curved tucked cone"
+    },
+    {
+      "value": "Long curved two part bulbous tip"
+    },
+    {
+      "value": "Long deep 1/4 total root"
+    },
+    {
+      "value": "Long dimpled cone"
+    },
+    {
+      "value": "Long full total root"
+    },
+    {
+      "value": "Long middle ridge triangle"
+    },
+    {
+      "value": "Long minor curved cone"
+    },
+    {
+      "value": "Long minor recurved cone"
+    },
+    {
+      "value": "Long minor top curved cone"
+    },
+    {
+      "value": "Long recurved triangle"
+    },
+    {
+      "value": "Long rootless cone"
+    },
+    {
+      "value": "Long spiraling striation"
+    },
+    {
+      "value": "Long straight striated cone"
+    },
+    {
+      "value": "Long striated cone curved tip"
+    },
+    {
+      "value": "Long striated curved flared base cone"
+    },
+    {
+      "value": "Long top curved cone 1/2 straight root"
+    },
+    {
+      "value": "Long wine bottle cone"
+    },
+    {
+      "value": "Major bottom curved cone"
+    },
+    {
+      "value": "Major curve right angle cone"
+    },
+    {
+      "value": "Major curve thin cone"
+    },
+    {
+      "value": "Major curve thin cone flared base"
+    },
+    {
+      "value": "Major curve tip-only two part cone"
+    },
+    {
+      "value": "Medium 1/2 concave root"
+    },
+    {
+      "value": "Medium 1/4 dome root"
+    },
+    {
+      "value": "Medium 1/4 dome root cone no cap"
+    },
+    {
+      "value": "Medium 3/4 funnel root"
+    },
+    {
+      "value": "Medium 3/4 straight root"
+    },
+    {
+      "value": "Medium cap tip cone flared base"
+    },
+    {
+      "value": "Medium curved bladed cone"
+    },
+    {
+      "value": "Medium curved cone 1/2 straight root"
+    },
+    {
+      "value": "Medium curved rootless cone"
+    },
+    {
+      "value": "Medium curved two part straight tip"
+    },
+    {
+      "value": "Medium rootless cone"
+    },
+    {
+      "value": "Medium rootless cone"
+    },
+    {
+      "value": "Medium straight bladed cone"
+    },
+    {
+      "value": "Medium straight cone flared base"
+    },
+    {
+      "value": "Medium tri-cusp"
+    },
+    {
+      "value": "Medium triangle 3/4 concave root"
+    },
+    {
+      "value": "Middle barb cone total root"
+    },
+    {
+      "value": "Middle bladed triangle"
+    },
+    {
+      "value": "Mounding cone"
+    },
+    {
+      "value": "NA"
+    },
+    {
+      "value": "Pot-bellied squat triangle"
+    },
+    {
+      "value": "Right triangle concave root"
+    },
+    {
+      "value": "Rootless long triangle"
+    },
+    {
+      "value": "Rootless medium triangle"
+    },
+    {
+      "value": "Rounded convex triangle"
+    },
+    {
+      "value": "Slinky christmas tree"
+    },
+    {
+      "value": "Small blade full root"
+    },
+    {
+      "value": "Small cone flared skirt"
+    },
+    {
+      "value": "Squat 1/2 straight root cone"
+    },
+    {
+      "value": "Squat Concave Root"
+    },
+    {
+      "value": "Squat convex cone 1/4 total root"
+    },
+    {
+      "value": "Squat convex root"
+    },
+    {
+      "value": "Squat convex triangle dome root"
+    },
+    {
+      "value": "Squat curved convex cone"
+    },
+    {
+      "value": "Squat curved rootless cone"
+    },
+    {
+      "value": "Squat flared bladed cone"
+    },
+    {
+      "value": "Squat multi-cusp"
+    },
+    {
+      "value": "Squat rootless cone"
+    },
+    {
+      "value": "Squat straight bladed cone"
+    },
+    {
+      "value": "Squat total root"
+    },
+    {
+      "value": "Squat triangle 1/2 dome root"
+    },
+    {
+      "value": "Squat tucked base cone"
+    },
+    {
+      "value": "Straight 3/4 barb"
+    },
+    {
+      "value": "Straight cone flared base"
+    },
+    {
+      "value": "Straight dome root"
+    },
+    {
+      "value": "Straight furrowed cone"
+    },
+    {
+      "value": "Straight many cusps"
+    },
+    {
+      "value": "Straight triangle 1/2 funnel root"
+    },
+    {
+      "value": "Straight triangle 1/2 total root"
+    },
+    {
+      "value": "Straight triangle 3/4 concave root"
+    },
+    {
+      "value": "Thin triangle full straight root"
+    },
+    {
+      "value": "Tiny barb two part cone"
+    },
+    {
+      "value": "Too Broken To Code"
+    },
+    {
+      "value": "Total funnel root curved cone"
+    },
+    {
+      "value": "Triangular claw"
+    },
+    {
+      "value": "Tucked base cone"
+    },
+    {
+      "value": "Tucked base convex cone"
+    },
+    {
+      "value": "Two part convex squat curved tip"
+    },
+    {
+      "value": "Two part convex squat tip"
+    },
+    {
+      "value": "Two part funnel cone"
+    },
+    {
+      "value": "Two part squat triangle"
+    },
+    {
+      "value": "Two part straight medium tip"
+    },
+    {
+      "value": "Two part straight squat tip"
+    },
+    {
+      "value": "Two part triangle"
+    },
+    {
+      "value": "Two part triangular cone"
+    },
+    {
+      "value": "Upper 1/4 blade cone"
+    },
+    {
+      "value": "Upper 3/4 bladed triangle"
+    },
+    {
+      "value": "Wedge triangle 3/4 total root"
+    },
+    {
+      "value": "Wide base curved triangle"
+    },
+    {
+      "value": "concave root flared blades"
+    },
+    {
+      "value": "convex triangle 3/4 dome root"
+    },
+    {
+      "value": "flat 1/2 straight root flared blades"
+    },
+    {
+      "value": "full dome root"
+    },
+    {
+      "value": "full straight root"
+    },
+    {
+      "value": "funnel cone dome root"
+    },
+    {
+      "value": "rootless single bladed cone"
+    },
+    {
+      "value": "squat convex triangle"
+    },
+    {
+      "value": "squat dome root cap tip"
+    },
+    {
+      "value": "squat dome root cone"
+    },
+    {
+      "value": "total root curved cone"
+    }
+  ]
+}
