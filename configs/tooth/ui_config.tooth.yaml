@@ -1,0 +1,418 @@
+Taxonomy_defaults: &Taxonomy_defaults
+  TYPE: "Taxonomy"
+  INCLUDE_HEADER: true
+  
+  toName: "image"
+  maxUsages: "1"
+  maxWidth: "400px"
+  minWidth: "400px"
+  leafsOnly: "true"
+
+
+fields:
+
+  Z1:
+    <<: *Taxonomy_defaults
+    placeholder: 'Z1: Ichthyolith Type'
+    choices:
+    - 'Z1.1: Tooth'
+    - 'Z1.2: Denticle'
+    - 'Z1.3: Other microfossil'
+    - 'Z1.4: Excess image/artifact'
+
+  Z2:
+    <<: *Taxonomy_defaults
+    placeholder: 'Z2: Degree of Fragmentation'
+    choices:
+      - 'Z2.1: No fragmentation - outline good'
+      - 'Z2.2: Some fragmentation - L/W good'
+      - 'Z2.3: Moderate fragmentaiton - traits discernable'
+      - "Z2.4: Significant fragmentation - can't code"
+
+  Type:
+    <<: *Taxonomy_defaults
+    placeholder: 'Type'
+    apiUrl: "s3://ichthyolith/misc/tooth.Type.Taxonomy.json"
+
+  A1:
+    <<: *Taxonomy_defaults
+    placeholder: 'A1: Length'
+    choices:
+      - "A1.0: Too broken to code"
+      - "A1.1: Squat"
+      - "A1.2: Medium"
+      - "A1.3: Long"
+      - "A1.4: Extra-long"
+  A2:
+    <<: *Taxonomy_defaults
+    placeholder: 'A2: Depth'
+    choices:
+      - "A2.0: Too broken to code"
+      - "A2.1: Flat"
+      - "A2.2: Mid-depth"
+      - "A2.3: Deep"
+      - "A2.4: Asymmetrical"
+  A3:
+    <<: *Taxonomy_defaults
+    placeholder: 'A3: Overall Shape'
+    choices:
+      - "A3.0: Too broken to code"
+      - "A3.1: Triangle"
+      - "A3.2: Rectangle"
+      - "A3.3: Bulbous"
+      - "A3.4: Stalked"
+      - "A3.5: Half-dome"
+      - "A3.6: Oval/Egg"
+      - "A3.7: Asymmetrical Top"
+      - "A3.8: Asymmetrical Bottom"
+      - "A3.9: Multi-cusp"
+  A4:
+    <<: *Taxonomy_defaults
+    placeholder: 'A4: (Triangle) Shape Modifiers'
+    choices:
+      - "A4.0: Not a triangle or too broken to code"
+      - "A4.1: Straight"
+      - "A4.2: Concave"
+      - "A4.3: Convex"
+      - "A4.4: Funnel"
+      - "A4.5: Right"
+      - "A4.6: Asymmetrical"
+  B1:
+    <<: *Taxonomy_defaults
+    placeholder: 'B1: Surface Texture'
+    choices:
+      - "B1.0: Too broken to code"
+      - "B1.1: Smooth"
+      - "B1.2: Fingerprinted"
+      - "B1.3: Furrowed"
+      - "B1.4: Allen-wrench"
+      - "B1.5: Spiraling striation"
+      - "B1.6: Spiraling fingerprints"
+      - "B1.7: Dimpled"
+  B2:
+    <<: *Taxonomy_defaults
+    placeholder: 'B2: Add’l Modifiers'
+    choices:
+      - "B2.0: No modifiers or too broken to code"
+      - "B2.1: Cloudy"
+      - "B2.2: Slinky"
+      - "B2.3: Lipped"
+  B3:
+    <<: *Taxonomy_defaults
+    placeholder: 'B3: Modifier Location'
+    choices:
+      - "B3.0: No Modifiers or too broken to code"
+      - "B3.1: Whole tooth"
+      - "B3.2: One side"
+      - "B3.3: Tip only"
+      - "B3.4: Middle only"
+      - "B3.5: Bottom only"
+  C1:
+    <<: *Taxonomy_defaults
+    placeholder: 'C1: Curve Size'
+    choices:
+      - "C1.0: Too broken to code"
+      - "C1.1: Uncurved"
+      - "C1.2: Minor curve"
+      - "C1.3: Major curve"
+      - "C1.4: Recurved"
+  C2:
+    <<: *Taxonomy_defaults
+    placeholder: 'C2: Curve Location'
+    choices:
+      - "C2.0: Uncurved or too broken to code"
+      - "C2.1: Whole-tooth"
+      - "C2.2: Tip-only"
+      - "C2.3: Base-only"
+  C3:
+    <<: *Taxonomy_defaults
+    placeholder: 'C3: Direction of Curve'
+    choices:
+      - "C3.0: Uncurved or too broken to code"
+      - "C3.1: Side-curve"
+      - "C3.2: Curl-curve"
+      - "C3.3: Multi-curve"
+      - "C3.4: Cone-curve"
+      - "C3.5: Spiral"
+      - "C3.6: Scoop"
+  D1:
+    <<: *Taxonomy_defaults
+    placeholder: 'D1: Tooth Sections'
+    choices:
+      - "D1.0: Too broken to code"
+      - "D1.1: One-part"
+      - "D1.2: Two-part"
+      - "D1.3: Three+ parts"
+  D2:
+    <<: *Taxonomy_defaults
+    placeholder: 'D2: Base cross-section'
+    choices:
+      - "D2.0: Too broken to code"
+      - "D2.1: Cone"
+      - "D2.2: Triangle"
+      - "D2.3: Rectangle"
+      - "D2.4: Multi-pronged"
+      - "D2.5: Asymmetrical"
+  E1:
+    <<: *Taxonomy_defaults
+    placeholder: 'E1: Cusp Number'
+    choices:
+      - "E1.0: Too broken to code"
+      - "E1.1: One cusp/Single point"
+      - "E1.2: 2 cusps"
+      - "E1.3: 3 cusps"
+      - "E1.4: 4 cusps"
+      - "E1.5: 5 cusps"
+      - "E1.6: 6 or more cusps"
+  E2:
+    <<: *Taxonomy_defaults
+    placeholder: 'E2: Muti-cusp Symmetry'
+    choices:
+      - "E2.0: One cusp or too broken to code"
+      - "E2.1: Symmetrical"
+      - "E2.2: Asymmetrical"
+  E3:
+    <<: *Taxonomy_defaults
+    placeholder: 'E3: Cusp Relative Size'
+    choices:
+      - "E3.0: One cusp or too broken to code"
+      - "E3.1: Same size"
+      - "E3.2: Middle largest"
+      - "E3.3: Outer larger"
+      - "E3.4: Increasing in size along tooth"
+  E4:
+    <<: *Taxonomy_defaults
+    placeholder: 'E4: Cusp Curvature/Directionailty'
+    choices:
+      - "E4.0: One cusp or too broken to code"
+      - "E4.1: Straight"
+      - "E4.2: Same direction curve"
+      - "E4.3: Outer cusps curve out"
+      - "E4.4: Outer cusps curve in"
+  E5:
+    <<: *Taxonomy_defaults
+    placeholder: 'E5: Cusp Shape Similarity'
+    choices:
+      - "E5.0: One cusp or too broken to code"
+      - "E5.1: All cusps same shape"
+      - "E5.2: Middle cusp different"
+      - "E5.3: Outer cusp different"
+      - "E5.4: All cusps different"
+  E6:
+    <<: *Taxonomy_defaults
+    placeholder: 'E6: Cusp Shape - inner/central'
+    choices:
+      - "E6.0: One cusp or too broken to code"
+      - "E6.1: Rounded triangle"
+      - "E6.2: Pointed triangle"
+      - "E6.3: Flat-topped"
+      - "E6.4: Dome-shaped"
+  E7:
+    <<: *Taxonomy_defaults
+    placeholder: 'E7: Cusp Shape - outer'
+    choices:
+      - "E7.0: One cusp or too broken to code"
+      - "E7.1: Rounded triangle"
+      - "E7.2: Pointed triangle"
+      - "E7.3: Flat-topped"
+      - "E7.4: Dome-shaped"
+  E8:
+    <<: *Taxonomy_defaults
+    placeholder: 'E8: Largest Cusp Relative Size'
+    choices:
+      - "E8.0: One cusp or too broken to code"
+      - "E8.1: All same size"
+      - "E8.2: Largest &lt;2x smallest"
+      - "E8.3: Largest &gt;2x smallest"
+  E9:
+    <<: *Taxonomy_defaults
+    placeholder: 'E9: Cusp Arrangement on Tooth'
+    choices:
+      - "E9.0: One cusp or too broken to code"
+      - "E9.1: Straight"
+      - "E9.2: Curved"
+      - "E9.3: Clustered/Clumped"
+  F1:
+    <<: *Taxonomy_defaults
+    placeholder: 'F1: Blade Number/Symmetry'
+    choices:
+      - "F1.0: Too broken to code"
+      - "F1.1: No blades"
+      - "F1.2: Symmetrical"
+      - "F1.3: Asymmetrical"
+      - "F1.4: Single"
+      - "F1.5: Multi-blade"
+      - "F1.6: Different cusps have different blades"
+  F2:
+    <<: *Taxonomy_defaults
+    placeholder: 'F2: Blade Width'
+    choices:
+      - "F2.0: No blades or too broken to code"
+      - "F2.1: Small"
+      - "F2.2: Medium"
+      - "F2.3: Large"
+  F3:
+    <<: *Taxonomy_defaults
+    placeholder: 'F3: Blade Location'
+    choices:
+      - "F3.0: No blades or too broken to code"
+      - "F3.1: Upper"
+      - "F3.2: Middle"
+      - "F3.3: Lower"
+      - "F3.4: Full-length"
+  F4:
+    <<: *Taxonomy_defaults
+    placeholder: 'F4: Blade Length'
+    choices:
+      - "F4.0: No blades or too broken to code"
+      - "F4.1: (1/4)"
+      - "F4.2: (1/3)"
+      - "F4.3: (1/2)"
+      - "F4.4: (3/4)"
+      - "F4.5: Full-length"
+  F5:
+    <<: *Taxonomy_defaults
+    placeholder: 'F5: Blade Shape'
+    choices:
+      - "F5.0: No blades or too broken to code"
+      - "F5.1: Straight"
+      - "F5.2: Top-heavy"
+      - "F5.3: Middle-heavy"
+      - "F5.4: Bottom-heavy (flared)"
+  F6:
+    <<: *Taxonomy_defaults
+    placeholder: 'F6: Blade Relative Location'
+    choices:
+      - "F6.0: No blades or too broken to code"
+      - "F6.1: Straight edge"
+      - "F6.2: Outer-curve or long edge"
+      - "F6.3: Inner-curve or short edge"
+  F7:
+    <<: *Taxonomy_defaults
+    placeholder: 'F7: Blade Features'
+    choices:
+      - "F7.0: No blades or too broken to code"
+      - "F7.1: No blade features"
+      - "F7.2: Bumps"
+      - "F7.3: Serrations"
+  F8:
+    <<: *Taxonomy_defaults
+    placeholder: 'F8: Blade Feature Location'
+    choices:
+      - "F8.0: No blades/features or too broken to code"
+      - "F8.1: Upper"
+      - "F8.2: Middle"
+      - "F8.3: Lower"
+      - "F8.4: Full-length"
+  G2:
+    <<: *Taxonomy_defaults
+    placeholder: 'G2: Blade Width'
+    choices:
+      - "G2.0: No blades or too broken to code"
+      - "G2.1: Small"
+      - "G2.2: Medium"
+      - "G2.3: Large"
+  G3:
+    <<: *Taxonomy_defaults
+    placeholder: 'G3: Blade Location'
+    choices:
+      - "G3.0: No blades or too broken to code"
+      - "G3.1: Upper"
+      - "G3.2: Middle"
+      - "G3.3: Lower"
+      - "G3.4: Full-length"
+  G4:
+    <<: *Taxonomy_defaults
+    placeholder: 'G4: Blade Length'
+    choices:
+      - "G4.0: No blades or too broken to code"
+      - "G4.1: (1/4)"
+      - "G4.2: (1/3)"
+      - "G4.3: (1/2)"
+      - "G4.4: (3/4)"
+      - "G4.5: Full-length"
+  G5:
+    <<: *Taxonomy_defaults
+    placeholder: 'G5: Blade Shape'
+    choices:
+      - "G5.0: No blades or too broken to code"
+      - "G5.1: Straight"
+      - "G5.2: Top-heavy"
+      - "G5.3: Middle-heavy"
+      - "G5.4: Bottom-heavy (flared)"
+  G6:
+    <<: *Taxonomy_defaults
+    placeholder: 'G6: Blade Relative Location'
+    choices:
+      - "G6.0: No blades or too broken to code"
+      - "G6.1: Straight edge"
+      - "G6.2: Outer-curve or long edge"
+      - "G6.3: Inner-curve or short edge"
+  G7:
+    <<: *Taxonomy_defaults
+    placeholder: 'G7: Blade Features'
+    choices:
+      - "G7.0: No blades or too broken to code"
+      - "G7.1: No blade features"
+      - "G7.2: Bumps"
+      - "G7.3: Serrations"
+  G8:
+    <<: *Taxonomy_defaults
+    placeholder: 'G8: Blade Feature Location'
+    choices:
+      - "G8.0: No blades/features or too broken to code"
+      - "G8.1: Upper"
+      - "G8.2: Middle"
+      - "G8.3: Lower"
+      - "G8.4: Full-length"
+  H1:
+    <<: *Taxonomy_defaults
+    placeholder: 'H1: Barb Length'
+    choices:
+      - "H1.0: Too broken to code"
+      - "H1.1: No barb(s)"
+      - "H1.2: (1/4)"
+      - "H1.3: (1/3)"
+      - "H1.4: (1/2)"
+      - "H1.5: (3/4)"
+  H2:
+    <<: *Taxonomy_defaults
+    placeholder: 'H2: Barb Vertical Location'
+    choices:
+      - "H2.0: No barb(s)"
+      - "H2.1: Top"
+      - "H2.2: Middle"
+      - "H2.3: Bottom"
+  H3:
+    <<: *Taxonomy_defaults
+    placeholder: 'H3: Barb Placement'
+    choices:
+      - "H3.0: No barb(s)"
+      - "H3.1: Outer-curve"
+      - "H3.2: Inner-curve"
+      - "H3.3: Straight-edge"
+  H4:
+    <<: *Taxonomy_defaults
+    placeholder: 'H4: Barb Shape'
+    choices:
+      - "H4.0: No barb(s)"
+      - "H4.1: Right triangle"
+      - "H4.2: Obtuse"
+      - "H4.3: Hooked"
+  I1:
+    <<: *Taxonomy_defaults
+    placeholder: 'I1: Barb Length'
+    choices:
+      - "I1.0: No barb(s)"
+      - "I1.2: (1/4)"
+      - "I1.3: (1/3)"
+      - "I1.4: (1/2)"
+      - "I1.5: (3/4)"
+  I2:
+    <<: *Taxonomy_defaults
+    placeholder: 'I2: Barb Vertical Location'
+    choices:
+      - "I2.0: No barb(s)"
+      - "I2.1: Top"
+      - "I2.2: Middle"
+      - "I2.3: Bottom"
