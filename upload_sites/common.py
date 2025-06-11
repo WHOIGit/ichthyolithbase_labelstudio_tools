@@ -1,4 +1,3 @@
-from tqdm import tqdm
 
 # TODO fullslide_files withtext vs sanstext
 # todo what if you only have withtext tiffs?
