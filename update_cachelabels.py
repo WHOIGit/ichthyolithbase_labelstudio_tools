@@ -26,6 +26,7 @@ def parse_arguments():
     parser.add_argument('--token', '-t', required=True, help='File with API key for Label Studio (available in Account & Settings > Access Tokens)')
     parser.add_argument('--project', '-p', metavar='ID', required=True, type=int, help='Project ID to snapshot')
     parser.add_argument('--fields', '-f', metavar='F', nargs='*', required=True, help='Annotation fields to cache. A line-delimited text file also accepted')
+    parser.add_argument('--from-predictions', action='store_true', help='Pulls from Predictions instead of Annotations')
     #parser.add_argument('--views', type=int, nargs='*', help='Default is auto')
     return parser.parse_args()
 
@@ -72,12 +73,12 @@ def timeout_views_required(host:str, token:str, project_id:int, timeout_seconds=
 
 
 
-def update_cachelabel(host:str, token:str, project_id:int, control_tag:str, with_counters:bool=False, view_id:int=None, include:list=[], exclude:list=[]):
+def update_cachelabel(host:str, token:str, project_id:int, control_tag:str, with_counters:bool=False, view_id:int=None, include:list=[], exclude:list=[], from_predictions=False):
     url = host + '/api/dm/actions'  
     headers = {"Content-Type": "application/json", "Authorization":f"Token {token}"}  
     params = dict(id='cache_labels', project=project_id)
     payload = dict(
-        source = 'Annotations',
+        source = 'Predictions' if from_predictions else 'Annotations',
         project = project_id,
         control_tag = control_tag,
         with_counters = 'Yes' if with_counters else 'No',
@@ -98,7 +99,7 @@ def update_cachelabel(host:str, token:str, project_id:int, control_tag:str, with
         print(f"Failed to retrieve data: {response.status_code} {response.json()}")
 
 
-def update_cachelabels(host:str, token:str, project_id:int, control_tags:list, with_counters:bool=False, timeout_views='auto'):
+def update_cachelabels(host:str, token:str, project_id:int, control_tags:list, with_counters:bool=False, timeout_views='auto', from_predictions=False):
     
     if timeout_views == 'auto':
         timeout_views = timeout_views_required(host, token, project_id, TIMEOUT_SECONDS, ITEMS_PER_SECOND)
@@ -114,10 +115,10 @@ def update_cachelabels(host:str, token:str, project_id:int, control_tags:list, w
         if timeout_views:
             for view_id in timeout_views:
                 pbar.set_description(f'Updating "{tag}" (view_id={view_id})')
-                update_cachelabel(host, token, project_id, tag, with_counters, view_id=view_id)
+                update_cachelabel(host, token, project_id, tag, with_counters, view_id=view_id, from_predictions=from_predictions)
         else:
             pbar.set_description(f'Updating "{tag}"')
-            update_cachelabel(host, token, project_id, tag, with_counters)
+            update_cachelabel(host, token, project_id, tag, with_counters, from_predictions=from_predictions)
 
 
 def main():
@@ -127,7 +128,7 @@ def main():
     fields = read_fields(args.fields)
 
     # Update the fields
-    update_cachelabels(args.host, token, args.project, fields)
+    update_cachelabels(args.host, token, args.project, fields, from_predictions=args.from_predictions)
     
 
 if __name__ == '__main__':
