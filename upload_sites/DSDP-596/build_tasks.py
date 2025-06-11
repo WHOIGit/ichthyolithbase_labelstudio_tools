@@ -1,122 +1,77 @@
 import os
 from tqdm import tqdm
 
+import upload_sites.common
 
-def extract_fullslide_pid_metadata(path):
-    ...
-    # TODO
+def extract_fullslide_pid_metadata(path, add_description=True):
+    import re
+    # rois: {ROOT}/DSDP-596/DSDP-596-P001-L01-1H-2W-5-7cm-g106_Hwell_N1of1_Mcompound_Oflat_I1_TzEDF-0_X5/final/focused/DSDP-596-P001-L01-1H-2W-5-7cm-g106_obj00001_edf.tif
+    # full: {ROOT}/DSDP-596/DSDP-596-P001-L01-1H-2W-5-7cm-g106_Hwell_N1of1_Mcompound_Oflat_I1_TzEDF-0_X5/DSDP-596-P001-L01-1H-2W-5-7cm-g106_boxes_th=0.1800_size=0100u-4500u.jpg
+    metadata = {}
+    is_roi = bool('_obj' in path)
+    if is_roi:
+        metadata_str = path.split('/')[-4]
+        obj = path.split('_')[-2]  # obj00001
+        obj = int(obj[3:])
+    else:
+        obj = None
+        metadata_str = path.split('/')[-2]
+        fullslide_boxesth = path.split('_')[-2]  # th=0.1800
+        fullslide_size = path.split('_')[-1]    # size=0100u-4500u.jpg
+        boxesth = fullslide_boxesth.split('=')[1]
+        size = fullslide_size.split('=')[1].split('.')[0]
+        metadata['fullslide__boxes_th'] = boxesth
+        metadata['fullslide__size'] = size
+
+    # metadata_str example: "DSDP-596-P001-L01-1H-2W-5-7cm-g106_Hwell_N1of1_Mcompound_Oflat_I1_TzEDF-0_X5"
+    pattern = '(?P<site>DSDP-\d+)-(?P<slide>P\d+)-(?P<internal_id>[A-Za-z0-9]+)-(?P<core>\d+H)-(?P<section>\d+W)-(?P<interval>\d+-\d+cm)-(?P<fractioning>g\d+)_Hwell_(?P<fullslideN>N\d+of\d+)_Mcompound_Oflat_I1_TzEDF-0_(?P<magnification>[A-Za-z0-9]+)'
+    match = re.match(pattern, metadata_str)
+    assert bool(match), f'metadata_str "{metadata_str}" did not match pattern "{pattern}". {match}'
+    ext = match.groupdict()  # extracted
+    metadata.update(ext)
+
+    metadata['sample_id'] = '{site}_{slide}_{core}_{section}_{interval}'.format(**metadata)
+    metadata['fullslide_id'] = fullslide_id = '{sample_id}_{fullslideN}'.format(**metadata)
+    if is_roi:
+        metadata['object_id'] = '{fullslideN}_obj{object:05}'.format(object=obj, **metadata)
+        pid = '{sample_id}_{object_id}'.format(**metadata)
+        metadata['pid'] = pid
+    else:
+        pid = None
+
+    if is_roi and add_description:
+        s = ('Sample: {sample_id}\n'
+             'Object: {object_id}'
+             'internal_id={internal_id}, magnification={magnification}, size_fractioning={fractioning}'
+             )
+        metadata['description'] = s.format(**metadata)
+
     return fullslide_id, pid, metadata
 
 
-
-def build_tasks():
-    with open('DSDP-596_tifflist.txt') as f:
+def build_tasks(roi_listfile='DSDP-596_tifflist.txt',
+                fullslide_listfile='DSDP-596_biglist.txt',
+                ROOT='/user/esibert/ichthyolithBase/',
+                bucket_name='ichthyolith'):
+    with open(roi_listfile) as f:
         tiff_files = f.read().splitlines()
-    with open('DSDP-596_biglist.txt') as f:
+    with open(fullslide_listfile) as f:
         fullslide_files = f.read().splitlines()
 
-    labeled = [tiff for tiff in tiff_files if '/final/focused/' in tiff]
-    unlabeled = [tiff for tiff in tiff_files if '/unlabeled/' in tiff] # TODO
+    withtext = [tiff for tiff in tiff_files if '/final/focused/' in tiff]
+    sanstext = [tiff for tiff in tiff_files if tiff not in withtext]
     #print(tiff_files[:2])
     #print(fullslide_files[:2])
 
-    print(check1:=set(tiff_files)-set(labeled)-set(unlabeled))  # check all accouted for
-    print(check2a:=len(labeled), check2b:=len({os.path.basename(tiff) for tiff in labeled}))
-    print(check3a:=len(unlabeled), check3b:=len({os.path.basename(tiff) for tiff in unlabeled}))
+    print(check1:=set(tiff_files)-set(withtext)-set(sanstext))  # check all accouted for
+    #print(check2a:=len(withtext), check2b:=len({os.path.basename(tiff) for tiff in withtext}))
+    #print(check3a:=len(sanstext), check3b:=len({os.path.basename(tiff) for tiff in sanstext}))
     assert not check1
-    assert check2a == check2b
-    assert check3a == check3b
-
-    ROOT = '/user/esibert/ichthyolithBase/'
-
-    fullslide_polaroid_mapper = {}
-    for fullslide_polaroid_file in fullslide_files:
-        fullslide_dir = fullslide_polaroid_file.split('_')[-2]
-        map_overview = dict(
-            fullpath = ROOT+fullslide_polaroid_file,
-            tiff2jpg = True,
-            s3_key = 'fullslide_polaroid_jpg/{fullslide_id}.jpg'
-        )
-        fullslide_polaroid_mapper[fullslide_dir] = map_overview
-
-    tasks = dict()
-    for tiff_file in unlabeled:
-        metadata, pid, fullslide_id = extract_fullslide_pid_metadata(tiff_file)
-        fullslide_dir = tiff_file.split('_')[-4]  # TODO check this is -4
-        task = dict(
-            data = dict(
-                pid = pid,
-                fullslide_id = fullslide_id,
-                **metadata,
-            ),
-            map_rois_jpg = dict(
-                fullpath = ROOT+tiff_file,
-                tiff2jpg = True,
-                s3_key = f'rois_jpg/{pid}.jpg',
-            ),
-            map_rois_tiff = dict(
-                fullpath = ROOT+tiff_file,
-                tiff2jpg = False,
-                s3_key = f'rois_tiff/{pid}.tiff',
-            ),
-        )
-        if fullslide_dir in fullslide_polaroid_mapper.keys():
-            task['map_fullslide_polaroid_jpg'] = fullslide_polaroid_mapper[fullslide_dir]
-        tasks[pid] = task
-
-    for tiff_file in labeled:
-        _, pid, fullslide_id = extract_fullslide_pid_metadata(tiff_file)
-        assert fullslide_id == tasks[pid]['data']['fullslide_id']
-        assert fullslide_id in pid
-        tasks[pid]['map_rois_polaroid_jpg'] = dict(
-            fullpath = ROOT+tiff_file,
-            tiff2jpg = True,
-            s3_key = f'rois_polaroid_jpg/{pid}.jpg',
-        )
-
-    for task in tqdm(tasks.values()):
-        add_s3_image_references(task)
-
+    #assert check2a == check2b
+    #assert check3a == check3b
+    tasks = upload_sites.common.build_tasks(sanstext=[], withtext=withtext,
+                            metadata_extractor=extract_fullslide_pid_metadata,
+                            fullslide_files=fullslide_files,
+                            bucket_name=bucket_name,
+                            ROOT=ROOT)
     return tasks
-
-
-def compute_task_metadata(path):
-    import re
-    # DSDP-596/DSDP-596-P001-L01-1H-2W-5-7cm-g106_Hwell_N1of1_Mcompound_Oflat_I1_TzEDF-0_X5/final/focused/DSDP-596-P001-L01-1H-2W-5-7cm-g106_obj00001_edf.tif
-    # TODO from filename just need obj0000, all other metadata accessible from fullslide_dir i think
-    fullslide_dir = path.split('/')[-4]
-    # DSDP-596-P001-L01-1H-2W-5-7cm-g106_Hwell_N1of1_Mcompound_Oflat_I1_TzEDF-0_X5
-    pattern = '(?P<site>DSDP-\d+)-(?P<slide>P\d+)-(?P<sediment>[A-Za-z0-9]+)-(?P<core>\d+H)-(?P<section>\d+W)-(?P<interval>\d+-\d+cm)-(?P<fraction>g\d+)_Hwell_N(?P<fullslideN>\d+)of(?P<fullslidesM>\d+)_Mcompound_Oflat_I1_TzEDF-0_(?P<magnification>[A-Za-z0-9]+)'
-    match = re.match(pattern, fullslide_dir)
-    assert bool(match), f'fullslide_dir "{fullslide_dir}" did not match pattern "{pattern}". {match}'
-    metadata = dict(match.groupdict())  # extracted
-    metadata['iodp'] = f"{metadata['core']}_{metadata['section']}_{metadata['interval']}"
-    metadata['object'] = str(int(path.split('_')[-2][3:])) # todo check
-    return metadata
-
-
-def add_s3_image_references(task, bucket='ichthyolith'):
-    s3_url = 's3://{bucket}/{key}'
-
-    if 'map_rois_jpg' in task:
-        key = task['map_rois_jpg']['s3_key']
-        task['data']['image'] = s3_url.format(bucket=bucket, key=key)
-
-    if 'map_rois_polaroid_jpg' in task:
-        key = task['map_rois_polaroid_jpg']['s3_key']
-        task['data']['image_polaroid'] = s3_url.format(bucket=bucket, key=key)
-
-    if 'map_fullslide_polaroid_jpg' in task:
-        key = task['map_fullslide_polaroid_jpg']['s3_key']
-        task['data']['image_fullslide_polaroid'] = s3_url.format(bucket=bucket, key=key)
-
-
-
-
-tasks = build_tasks()
-print('done:', len(tasks))
-from pprint import pprint
-pprint(list(tasks.values())[0])
-
-# TODO ask if pid can be simplified.
-#      can we drop iodp (core section interval), magnification, fraction ?
