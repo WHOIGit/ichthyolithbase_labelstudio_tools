@@ -1,6 +1,6 @@
 {
-  "roi_listfile": "upload_sites/ODP-1260/ODP-1260_tifflist.txt",
-  "fullslide_listfile": "upload_sites/ODP-1260/ODP-1260_biglist.txt",
+  "roi_listfile": "upload_sites/ODP-1260/ODP-1260_tiffs.list",
+  "fullslide_listfile": "upload_sites/ODP-1260/ODP-1260_fullslides.list",
   "ROOT": "/user/esibert/ichthyolithBase/",
   "task_builder_module": "upload_sites.ODP-1260.build_tasks",
   "bucket": "ichthyolith"
