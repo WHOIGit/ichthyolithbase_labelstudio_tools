@@ -1,0 +1,529 @@
+<View style="display: flex;">
+  
+  <View style="padding: 0em 1em; background: #f1f1f1; margin-right: 1em; border-radius: 3px">
+    <Text name="pid" value="$pid"></Text>
+
+    <Header value="Z1: Ichthyolith Type" />
+    <Taxonomy name="Z1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="Z1: Ichthyolith Type">
+      <Choice alias="Z1.1" value="Z1.1: Tooth"></Choice>
+      <Choice alias="Z1.2" value="Z1.2: Denticle"></Choice>
+      <Choice alias="Z1.3" value="Z1.3: Other microfossil"></Choice>
+      <Choice alias="Z1.4" value="Z1.4: Excess image/artifact"></Choice>
+    </Taxonomy>
+
+    <Header value="Z2: Degree of Fragmentation" />
+    <Taxonomy name="Z2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="Z2: Degree of Fragmentation">
+      <Choice alias="Z2.1" value="Z2.1: No fragmentation - outline good"></Choice>
+      <Choice alias="Z2.2" value="Z2.2: Some fragmentation - L/W good"></Choice>
+      <Choice alias="Z2.3" value="Z2.3: Moderate fragmentaiton - traits discernable"></Choice>
+      <Choice alias="Z2.4" value="Z2.4: Significant fragmentation - can't code"></Choice>
+    </Taxonomy>
+
+    <Header value="Type" />
+    <Taxonomy name="Type" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="Type" apiUrl="s3://ichthyolith/misc/tooth.Type.Taxonomy.json"></Taxonomy>
+
+    <Header value="A1: Length" />
+    <Taxonomy name="A1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="A1: Length">
+      <Choice alias="A1.0" value="A1.0: Too broken to code"></Choice>
+      <Choice alias="A1.1" value="A1.1: Squat"></Choice>
+      <Choice alias="A1.2" value="A1.2: Medium"></Choice>
+      <Choice alias="A1.3" value="A1.3: Long"></Choice>
+      <Choice alias="A1.4" value="A1.4: Extra-long"></Choice>
+    </Taxonomy>
+
+    <Header value="A2: Depth" />
+    <Taxonomy name="A2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="A2: Depth">
+      <Choice alias="A2.0" value="A2.0: Too broken to code"></Choice>
+      <Choice alias="A2.1" value="A2.1: Flat"></Choice>
+      <Choice alias="A2.2" value="A2.2: Mid-depth"></Choice>
+      <Choice alias="A2.3" value="A2.3: Deep"></Choice>
+      <Choice alias="A2.4" value="A2.4: Asymmetrical"></Choice>
+    </Taxonomy>
+
+    <Header value="A3: Overall Shape" />
+    <Taxonomy name="A3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="A3: Overall Shape">
+      <Choice alias="A3.0" value="A3.0: Too broken to code"></Choice>
+      <Choice alias="A3.1" value="A3.1: Triangle"></Choice>
+      <Choice alias="A3.2" value="A3.2: Rectangle"></Choice>
+      <Choice alias="A3.3" value="A3.3: Bulbous"></Choice>
+      <Choice alias="A3.4" value="A3.4: Stalked"></Choice>
+      <Choice alias="A3.5" value="A3.5: Half-dome"></Choice>
+      <Choice alias="A3.6" value="A3.6: Oval/Egg"></Choice>
+      <Choice alias="A3.7" value="A3.7: Asymmetrical Top"></Choice>
+      <Choice alias="A3.8" value="A3.8: Asymmetrical Bottom"></Choice>
+      <Choice alias="A3.9" value="A3.9: Multi-cusp"></Choice>
+    </Taxonomy>
+
+    <Header value="A4: (Triangle) Shape Modifiers" />
+    <Taxonomy name="A4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="A4: (Triangle) Shape Modifiers">
+      <Choice alias="A4.0" value="A4.0: Not a triangle or too broken to code"></Choice>
+      <Choice alias="A4.1" value="A4.1: Straight"></Choice>
+      <Choice alias="A4.2" value="A4.2: Concave"></Choice>
+      <Choice alias="A4.3" value="A4.3: Convex"></Choice>
+      <Choice alias="A4.4" value="A4.4: Funnel"></Choice>
+      <Choice alias="A4.5" value="A4.5: Right"></Choice>
+      <Choice alias="A4.6" value="A4.6: Asymmetrical"></Choice>
+    </Taxonomy>
+
+    <Header value="B1: Surface Texture" />
+    <Taxonomy name="B1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="B1: Surface Texture">
+      <Choice alias="B1.0" value="B1.0: Too broken to code"></Choice>
+      <Choice alias="B1.1" value="B1.1: Smooth"></Choice>
+      <Choice alias="B1.2" value="B1.2: Fingerprinted"></Choice>
+      <Choice alias="B1.3" value="B1.3: Furrowed"></Choice>
+      <Choice alias="B1.4" value="B1.4: Allen-wrench"></Choice>
+      <Choice alias="B1.5" value="B1.5: Spiraling striation"></Choice>
+      <Choice alias="B1.6" value="B1.6: Spiraling fingerprints"></Choice>
+      <Choice alias="B1.7" value="B1.7: Dimpled"></Choice>
+    </Taxonomy>
+
+    <Header value="B2: Add’l Modifiers" />
+    <Taxonomy name="B2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="B2: Add’l Modifiers">
+      <Choice alias="B2.0" value="B2.0: No modifiers or too broken to code"></Choice>
+      <Choice alias="B2.1" value="B2.1: Cloudy"></Choice>
+      <Choice alias="B2.2" value="B2.2: Slinky"></Choice>
+      <Choice alias="B2.3" value="B2.3: Lipped"></Choice>
+    </Taxonomy>
+
+    <Header value="B3: Modifier Location" />
+    <Taxonomy name="B3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="B3: Modifier Location">
+      <Choice alias="B3.0" value="B3.0: No Modifiers or too broken to code"></Choice>
+      <Choice alias="B3.1" value="B3.1: Whole tooth"></Choice>
+      <Choice alias="B3.2" value="B3.2: One side"></Choice>
+      <Choice alias="B3.3" value="B3.3: Tip only"></Choice>
+      <Choice alias="B3.4" value="B3.4: Middle only"></Choice>
+      <Choice alias="B3.5" value="B3.5: Bottom only"></Choice>
+    </Taxonomy>
+
+    <Header value="C1: Curve Size" />
+    <Taxonomy name="C1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="C1: Curve Size">
+      <Choice alias="C1.0" value="C1.0: Too broken to code"></Choice>
+      <Choice alias="C1.1" value="C1.1: Uncurved"></Choice>
+      <Choice alias="C1.2" value="C1.2: Minor curve"></Choice>
+      <Choice alias="C1.3" value="C1.3: Major curve"></Choice>
+      <Choice alias="C1.4" value="C1.4: Recurved"></Choice>
+    </Taxonomy>
+
+    <Header value="C2: Curve Location" />
+    <Taxonomy name="C2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="C2: Curve Location">
+      <Choice alias="C2.0" value="C2.0: Uncurved or too broken to code"></Choice>
+      <Choice alias="C2.1" value="C2.1: Whole-tooth"></Choice>
+      <Choice alias="C2.2" value="C2.2: Tip-only"></Choice>
+      <Choice alias="C2.3" value="C2.3: Base-only"></Choice>
+    </Taxonomy>
+
+    <Header value="C3: Direction of Curve" />
+    <Taxonomy name="C3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="C3: Direction of Curve">
+      <Choice alias="C3.0" value="C3.0: Uncurved or too broken to code"></Choice>
+      <Choice alias="C3.1" value="C3.1: Side-curve"></Choice>
+      <Choice alias="C3.2" value="C3.2: Curl-curve"></Choice>
+      <Choice alias="C3.3" value="C3.3: Multi-curve"></Choice>
+      <Choice alias="C3.4" value="C3.4: Cone-curve"></Choice>
+      <Choice alias="C3.5" value="C3.5: Spiral"></Choice>
+      <Choice alias="C3.6" value="C3.6: Scoop"></Choice>
+    </Taxonomy>
+
+    <Header value="D1: Tooth Sections" />
+    <Taxonomy name="D1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="D1: Tooth Sections">
+      <Choice alias="D1.0" value="D1.0: Too broken to code"></Choice>
+      <Choice alias="D1.1" value="D1.1: One-part"></Choice>
+      <Choice alias="D1.2" value="D1.2: Two-part"></Choice>
+      <Choice alias="D1.3" value="D1.3: Three+ parts"></Choice>
+    </Taxonomy>
+
+    <Header value="D2: Base cross-section" />
+    <Taxonomy name="D2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="D2: Base cross-section">
+      <Choice alias="D2.0" value="D2.0: Too broken to code"></Choice>
+      <Choice alias="D2.1" value="D2.1: Cone"></Choice>
+      <Choice alias="D2.2" value="D2.2: Triangle"></Choice>
+      <Choice alias="D2.3" value="D2.3: Rectangle"></Choice>
+      <Choice alias="D2.4" value="D2.4: Multi-pronged"></Choice>
+      <Choice alias="D2.5" value="D2.5: Asymmetrical"></Choice>
+    </Taxonomy>
+
+    <Header value="E1: Cusp Number" />
+    <Taxonomy name="E1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E1: Cusp Number">
+      <Choice alias="E1.0" value="E1.0: Too broken to code"></Choice>
+      <Choice alias="E1.1" value="E1.1: One cusp/Single point"></Choice>
+      <Choice alias="E1.2" value="E1.2: 2 cusps"></Choice>
+      <Choice alias="E1.3" value="E1.3: 3 cusps"></Choice>
+      <Choice alias="E1.4" value="E1.4: 4 cusps"></Choice>
+      <Choice alias="E1.5" value="E1.5: 5 cusps"></Choice>
+      <Choice alias="E1.6" value="E1.6: 6 or more cusps"></Choice>
+    </Taxonomy>
+
+    <Header value="E2: Muti-cusp Symmetry" />
+    <Taxonomy name="E2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E2: Muti-cusp Symmetry">
+      <Choice alias="E2.0" value="E2.0: One cusp or too broken to code"></Choice>
+      <Choice alias="E2.1" value="E2.1: Symmetrical"></Choice>
+      <Choice alias="E2.2" value="E2.2: Asymmetrical"></Choice>
+    </Taxonomy>
+
+    <Header value="E3: Cusp Relative Size" />
+    <Taxonomy name="E3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E3: Cusp Relative Size">
+      <Choice alias="E3.0" value="E3.0: One cusp or too broken to code"></Choice>
+      <Choice alias="E3.1" value="E3.1: Same size"></Choice>
+      <Choice alias="E3.2" value="E3.2: Middle largest"></Choice>
+      <Choice alias="E3.3" value="E3.3: Outer larger"></Choice>
+      <Choice alias="E3.4" value="E3.4: Increasing in size along tooth"></Choice>
+    </Taxonomy>
+
+    <Header value="E4: Cusp Curvature/Directionailty" />
+    <Taxonomy name="E4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E4: Cusp Curvature/Directionailty">
+      <Choice alias="E4.0" value="E4.0: One cusp or too broken to code"></Choice>
+      <Choice alias="E4.1" value="E4.1: Straight"></Choice>
+      <Choice alias="E4.2" value="E4.2: Same direction curve"></Choice>
+      <Choice alias="E4.3" value="E4.3: Outer cusps curve out"></Choice>
+      <Choice alias="E4.4" value="E4.4: Outer cusps curve in"></Choice>
+    </Taxonomy>
+
+    <Header value="E5: Cusp Shape Similarity" />
+    <Taxonomy name="E5" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E5: Cusp Shape Similarity">
+      <Choice alias="E5.0" value="E5.0: One cusp or too broken to code"></Choice>
+      <Choice alias="E5.1" value="E5.1: All cusps same shape"></Choice>
+      <Choice alias="E5.2" value="E5.2: Middle cusp different"></Choice>
+      <Choice alias="E5.3" value="E5.3: Outer cusp different"></Choice>
+      <Choice alias="E5.4" value="E5.4: All cusps different"></Choice>
+    </Taxonomy>
+
+    <Header value="E6: Cusp Shape - inner/central" />
+    <Taxonomy name="E6" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E6: Cusp Shape - inner/central">
+      <Choice alias="E6.0" value="E6.0: One cusp or too broken to code"></Choice>
+      <Choice alias="E6.1" value="E6.1: Rounded triangle"></Choice>
+      <Choice alias="E6.2" value="E6.2: Pointed triangle"></Choice>
+      <Choice alias="E6.3" value="E6.3: Flat-topped"></Choice>
+      <Choice alias="E6.4" value="E6.4: Dome-shaped"></Choice>
+    </Taxonomy>
+
+    <Header value="E7: Cusp Shape - outer" />
+    <Taxonomy name="E7" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E7: Cusp Shape - outer">
+      <Choice alias="E7.0" value="E7.0: One cusp or too broken to code"></Choice>
+      <Choice alias="E7.1" value="E7.1: Rounded triangle"></Choice>
+      <Choice alias="E7.2" value="E7.2: Pointed triangle"></Choice>
+      <Choice alias="E7.3" value="E7.3: Flat-topped"></Choice>
+      <Choice alias="E7.4" value="E7.4: Dome-shaped"></Choice>
+    </Taxonomy>
+
+    <Header value="E8: Largest Cusp Relative Size" />
+    <Taxonomy name="E8" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E8: Largest Cusp Relative Size">
+      <Choice alias="E8.0" value="E8.0: One cusp or too broken to code"></Choice>
+      <Choice alias="E8.1" value="E8.1: All same size"></Choice>
+      <Choice alias="E8.2" value="E8.2: Largest &amp;lt;2x smallest"></Choice>
+      <Choice alias="E8.3" value="E8.3: Largest &amp;gt;2x smallest"></Choice>
+    </Taxonomy>
+
+    <Header value="E9: Cusp Arrangement on Tooth" />
+    <Taxonomy name="E9" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="E9: Cusp Arrangement on Tooth">
+      <Choice alias="E9.0" value="E9.0: One cusp or too broken to code"></Choice>
+      <Choice alias="E9.1" value="E9.1: Straight"></Choice>
+      <Choice alias="E9.2" value="E9.2: Curved"></Choice>
+      <Choice alias="E9.3" value="E9.3: Clustered/Clumped"></Choice>
+    </Taxonomy>
+
+    <Header value="F1: Blade Number/Symmetry" />
+    <Taxonomy name="F1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="F1: Blade Number/Symmetry">
+      <Choice alias="F1.0" value="F1.0: Too broken to code"></Choice>
+      <Choice alias="F1.1" value="F1.1: No blades"></Choice>
+      <Choice alias="F1.2" value="F1.2: Symmetrical"></Choice>
+      <Choice alias="F1.3" value="F1.3: Asymmetrical"></Choice>
+      <Choice alias="F1.4" value="F1.4: Single"></Choice>
+      <Choice alias="F1.5" value="F1.5: Multi-blade"></Choice>
+      <Choice alias="F1.6" value="F1.6: Different cusps have different blades"></Choice>
+    </Taxonomy>
+
+    <Header value="F2: Blade Width" />
+    <Taxonomy name="F2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="F2: Blade Width">
+      <Choice alias="F2.0" value="F2.0: No blades or too broken to code"></Choice>
+      <Choice alias="F2.1" value="F2.1: Small"></Choice>
+      <Choice alias="F2.2" value="F2.2: Medium"></Choice>
+      <Choice alias="F2.3" value="F2.3: Large"></Choice>
+    </Taxonomy>
+
+    <Header value="F3: Blade Location" />
+    <Taxonomy name="F3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="F3: Blade Location">
+      <Choice alias="F3.0" value="F3.0: No blades or too broken to code"></Choice>
+      <Choice alias="F3.1" value="F3.1: Upper"></Choice>
+      <Choice alias="F3.2" value="F3.2: Middle"></Choice>
+      <Choice alias="F3.3" value="F3.3: Lower"></Choice>
+      <Choice alias="F3.4" value="F3.4: Full-length"></Choice>
+    </Taxonomy>
+
+    <Header value="F4: Blade Length" />
+    <Taxonomy name="F4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="F4: Blade Length">
+      <Choice alias="F4.0" value="F4.0: No blades or too broken to code"></Choice>
+      <Choice alias="F4.1" value="F4.1: (1/4)"></Choice>
+      <Choice alias="F4.2" value="F4.2: (1/3)"></Choice>
+      <Choice alias="F4.3" value="F4.3: (1/2)"></Choice>
+      <Choice alias="F4.4" value="F4.4: (3/4)"></Choice>
+      <Choice alias="F4.5" value="F4.5: Full-length"></Choice>
+    </Taxonomy>
+
+    <Header value="F5: Blade Shape" />
+    <Taxonomy name="F5" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="F5: Blade Shape">
+      <Choice alias="F5.0" value="F5.0: No blades or too broken to code"></Choice>
+      <Choice alias="F5.1" value="F5.1: Straight"></Choice>
+      <Choice alias="F5.2" value="F5.2: Top-heavy"></Choice>
+      <Choice alias="F5.3" value="F5.3: Middle-heavy"></Choice>
+      <Choice alias="F5.4" value="F5.4: Bottom-heavy (flared)"></Choice>
+    </Taxonomy>
+
+    <Header value="F6: Blade Relative Location" />
+    <Taxonomy name="F6" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="F6: Blade Relative Location">
+      <Choice alias="F6.0" value="F6.0: No blades or too broken to code"></Choice>
+      <Choice alias="F6.1" value="F6.1: Straight edge"></Choice>
+      <Choice alias="F6.2" value="F6.2: Outer-curve or long edge"></Choice>
+      <Choice alias="F6.3" value="F6.3: Inner-curve or short edge"></Choice>
+    </Taxonomy>
+
+    <Header value="F7: Blade Features" />
+    <Taxonomy name="F7" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="F7: Blade Features">
+      <Choice alias="F7.0" value="F7.0: No blades or too broken to code"></Choice>
+      <Choice alias="F7.1" value="F7.1: No blade features"></Choice>
+      <Choice alias="F7.2" value="F7.2: Bumps"></Choice>
+      <Choice alias="F7.3" value="F7.3: Serrations"></Choice>
+    </Taxonomy>
+
+    <Header value="F8: Blade Feature Location" />
+    <Taxonomy name="F8" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="F8: Blade Feature Location">
+      <Choice alias="F8.0" value="F8.0: No blades/features or too broken to code"></Choice>
+      <Choice alias="F8.1" value="F8.1: Upper"></Choice>
+      <Choice alias="F8.2" value="F8.2: Middle"></Choice>
+      <Choice alias="F8.3" value="F8.3: Lower"></Choice>
+      <Choice alias="F8.4" value="F8.4: Full-length"></Choice>
+    </Taxonomy>
+
+    <Header value="G2: Blade Width" />
+    <Taxonomy name="G2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="G2: Blade Width">
+      <Choice alias="G2.0" value="G2.0: No blades or too broken to code"></Choice>
+      <Choice alias="G2.1" value="G2.1: Small"></Choice>
+      <Choice alias="G2.2" value="G2.2: Medium"></Choice>
+      <Choice alias="G2.3" value="G2.3: Large"></Choice>
+    </Taxonomy>
+
+    <Header value="G3: Blade Location" />
+    <Taxonomy name="G3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="G3: Blade Location">
+      <Choice alias="G3.0" value="G3.0: No blades or too broken to code"></Choice>
+      <Choice alias="G3.1" value="G3.1: Upper"></Choice>
+      <Choice alias="G3.2" value="G3.2: Middle"></Choice>
+      <Choice alias="G3.3" value="G3.3: Lower"></Choice>
+      <Choice alias="G3.4" value="G3.4: Full-length"></Choice>
+    </Taxonomy>
+
+    <Header value="G4: Blade Length" />
+    <Taxonomy name="G4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="G4: Blade Length">
+      <Choice alias="G4.0" value="G4.0: No blades or too broken to code"></Choice>
+      <Choice alias="G4.1" value="G4.1: (1/4)"></Choice>
+      <Choice alias="G4.2" value="G4.2: (1/3)"></Choice>
+      <Choice alias="G4.3" value="G4.3: (1/2)"></Choice>
+      <Choice alias="G4.4" value="G4.4: (3/4)"></Choice>
+      <Choice alias="G4.5" value="G4.5: Full-length"></Choice>
+    </Taxonomy>
+
+    <Header value="G5: Blade Shape" />
+    <Taxonomy name="G5" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="G5: Blade Shape">
+      <Choice alias="G5.0" value="G5.0: No blades or too broken to code"></Choice>
+      <Choice alias="G5.1" value="G5.1: Straight"></Choice>
+      <Choice alias="G5.2" value="G5.2: Top-heavy"></Choice>
+      <Choice alias="G5.3" value="G5.3: Middle-heavy"></Choice>
+      <Choice alias="G5.4" value="G5.4: Bottom-heavy (flared)"></Choice>
+    </Taxonomy>
+
+    <Header value="G6: Blade Relative Location" />
+    <Taxonomy name="G6" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="G6: Blade Relative Location">
+      <Choice alias="G6.0" value="G6.0: No blades or too broken to code"></Choice>
+      <Choice alias="G6.1" value="G6.1: Straight edge"></Choice>
+      <Choice alias="G6.2" value="G6.2: Outer-curve or long edge"></Choice>
+      <Choice alias="G6.3" value="G6.3: Inner-curve or short edge"></Choice>
+    </Taxonomy>
+
+    <Header value="G7: Blade Features" />
+    <Taxonomy name="G7" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="G7: Blade Features">
+      <Choice alias="G7.0" value="G7.0: No blades or too broken to code"></Choice>
+      <Choice alias="G7.1" value="G7.1: No blade features"></Choice>
+      <Choice alias="G7.2" value="G7.2: Bumps"></Choice>
+      <Choice alias="G7.3" value="G7.3: Serrations"></Choice>
+    </Taxonomy>
+
+    <Header value="G8: Blade Feature Location" />
+    <Taxonomy name="G8" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="G8: Blade Feature Location">
+      <Choice alias="G8.0" value="G8.0: No blades/features or too broken to code"></Choice>
+      <Choice alias="G8.1" value="G8.1: Upper"></Choice>
+      <Choice alias="G8.2" value="G8.2: Middle"></Choice>
+      <Choice alias="G8.3" value="G8.3: Lower"></Choice>
+      <Choice alias="G8.4" value="G8.4: Full-length"></Choice>
+    </Taxonomy>
+
+    <Header value="H1: Barb Length" />
+    <Taxonomy name="H1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="H1: Barb Length">
+      <Choice alias="H1.0" value="H1.0: Too broken to code"></Choice>
+      <Choice alias="H1.1" value="H1.1: No barb(s)"></Choice>
+      <Choice alias="H1.2" value="H1.2: (1/4)"></Choice>
+      <Choice alias="H1.3" value="H1.3: (1/3)"></Choice>
+      <Choice alias="H1.4" value="H1.4: (1/2)"></Choice>
+      <Choice alias="H1.5" value="H1.5: (3/4)"></Choice>
+    </Taxonomy>
+
+    <Header value="H2: Barb Vertical Location" />
+    <Taxonomy name="H2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="H2: Barb Vertical Location">
+      <Choice alias="H2.0" value="H2.0: No barb(s)"></Choice>
+      <Choice alias="H2.1" value="H2.1: Top"></Choice>
+      <Choice alias="H2.2" value="H2.2: Middle"></Choice>
+      <Choice alias="H2.3" value="H2.3: Bottom"></Choice>
+    </Taxonomy>
+
+    <Header value="H3: Barb Placement" />
+    <Taxonomy name="H3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="H3: Barb Placement">
+      <Choice alias="H3.0" value="H3.0: No barb(s)"></Choice>
+      <Choice alias="H3.1" value="H3.1: Outer-curve"></Choice>
+      <Choice alias="H3.2" value="H3.2: Inner-curve"></Choice>
+      <Choice alias="H3.3" value="H3.3: Straight-edge"></Choice>
+    </Taxonomy>
+
+    <Header value="H4: Barb Shape" />
+    <Taxonomy name="H4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="H4: Barb Shape">
+      <Choice alias="H4.0" value="H4.0: No barb(s)"></Choice>
+      <Choice alias="H4.1" value="H4.1: Right triangle"></Choice>
+      <Choice alias="H4.2" value="H4.2: Obtuse"></Choice>
+      <Choice alias="H4.3" value="H4.3: Hooked"></Choice>
+    </Taxonomy>
+
+    <Header value="I1: Barb Length" />
+    <Taxonomy name="I1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="I1: Barb Length">
+      <Choice alias="I1.0" value="I1.0: No barb(s)"></Choice>
+      <Choice alias="I1.2" value="I1.2: (1/4)"></Choice>
+      <Choice alias="I1.3" value="I1.3: (1/3)"></Choice>
+      <Choice alias="I1.4" value="I1.4: (1/2)"></Choice>
+      <Choice alias="I1.5" value="I1.5: (3/4)"></Choice>
+    </Taxonomy>
+
+    <Header value="I2: Barb Vertical Location" />
+    <Taxonomy name="I2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="I2: Barb Vertical Location">
+      <Choice alias="I2.0" value="I2.0: No barb(s)"></Choice>
+      <Choice alias="I2.1" value="I2.1: Top"></Choice>
+      <Choice alias="I2.2" value="I2.2: Middle"></Choice>
+      <Choice alias="I2.3" value="I2.3: Bottom"></Choice>
+    </Taxonomy>
+
+    <Header value="I3: Barb Placement" />
+    <Taxonomy name="I3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="I3: Barb Placement">
+      <Choice alias="I3.0" value="I3.0: No barb(s)"></Choice>
+      <Choice alias="I3.1" value="I3.1: Outer-curve"></Choice>
+      <Choice alias="I3.2" value="I3.2: Inner-curve"></Choice>
+      <Choice alias="I3.3" value="I3.3: Straight-edge"></Choice>
+    </Taxonomy>
+
+    <Header value="I4: Barb Shape" />
+    <Taxonomy name="I4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="I4: Barb Shape">
+      <Choice alias="I4.0" value="I4.0: No barb(s)"></Choice>
+      <Choice alias="I4.1" value="I4.1: Right triangle"></Choice>
+      <Choice alias="I4.2" value="I4.2: Obtuse"></Choice>
+      <Choice alias="I4.3" value="I4.3: Hooked"></Choice>
+    </Taxonomy>
+
+    <Header value="J1: Pulp Cavity Length" />
+    <Taxonomy name="J1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="J1: Pulp Cavity Length">
+      <Choice alias="J1.0" value="J1.0: Cannot discern pulp cavity"></Choice>
+      <Choice alias="J1.1" value="J1.1: Rootless"></Choice>
+      <Choice alias="J1.2" value="J1.2: (1/4)"></Choice>
+      <Choice alias="J1.3" value="J1.3: (1/3)"></Choice>
+      <Choice alias="J1.4" value="J1.4: (1/2)"></Choice>
+      <Choice alias="J1.5" value="J1.5: (3/4)"></Choice>
+      <Choice alias="J1.6" value="J1.6: Full-length"></Choice>
+    </Taxonomy>
+
+    <Header value="J2: Pulp Cavity Width" />
+    <Taxonomy name="J2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="J2: Pulp Cavity Width">
+      <Choice alias="J2.0" value="J2.0: Rootless or too broken to code"></Choice>
+      <Choice alias="J2.1" value="J2.1: Thin"></Choice>
+      <Choice alias="J2.2" value="J2.2: Medium"></Choice>
+      <Choice alias="J2.3" value="J2.3: Wide"></Choice>
+      <Choice alias="J2.4" value="J2.4: Total"></Choice>
+    </Taxonomy>
+
+    <Header value="J3: Overall Pulp Cavity Shape" />
+    <Taxonomy name="J3" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="J3: Overall Pulp Cavity Shape">
+      <Choice alias="J3.0" value="J3.0: Rootless or too broken to code"></Choice>
+      <Choice alias="J3.1" value="J3.1: Straight"></Choice>
+      <Choice alias="J3.2" value="J3.2: Concave"></Choice>
+      <Choice alias="J3.3" value="J3.3: Convex"></Choice>
+      <Choice alias="J3.4" value="J3.4: Dome"></Choice>
+      <Choice alias="J3.5" value="J3.5: Funnel"></Choice>
+      <Choice alias="J3.6" value="J3.6: Vase-shape"></Choice>
+      <Choice alias="J3.7" value="J3.7: Flat-top"></Choice>
+      <Choice alias="J3.8" value="J3.8: Asymmetrical"></Choice>
+    </Taxonomy>
+
+    <Header value="J4: Pulp Cavity Additional Modifiers" />
+    <Taxonomy name="J4" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="J4: Pulp Cavity Additional Modifiers">
+      <Choice alias="J4.0" value="J4.0: Rootless/no modifiers or too broken to code"></Choice>
+      <Choice alias="J4.1" value="J4.1: Rough"></Choice>
+      <Choice alias="J4.2" value="J4.2: Branching"></Choice>
+      <Choice alias="J4.3" value="J4.3: Extended-tip"></Choice>
+      <Choice alias="J4.4" value="J4.4: Radiating"></Choice>
+    </Taxonomy>
+
+    <Header value="K1: Base Shape" />
+    <Taxonomy name="K1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="K1: Base Shape">
+      <Choice alias="K1.0" value="K1.0: Base not preserved"></Choice>
+      <Choice alias="K1.1" value="K1.1: Flat"></Choice>
+      <Choice alias="K1.2" value="K1.2: Flared"></Choice>
+      <Choice alias="K1.3" value="K1.3: Tucked"></Choice>
+      <Choice alias="K1.4" value="K1.4: Inward"></Choice>
+      <Choice alias="K1.5" value="K1.5: Pointed"></Choice>
+      <Choice alias="K1.6" value="K1.6: Asymmetrical"></Choice>
+      <Choice alias="K1.7" value="K1.7: Hollow"></Choice>
+    </Taxonomy>
+
+    <Header value="L1: Bottom part relative size (if two-part)" />
+    <Taxonomy name="L1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="L1: Bottom part relative size (if two-part)">
+      <Choice alias="L1.0" value="L1.0: One-part tooth or too broken to code"></Choice>
+      <Choice alias="L1.1" value="L1.1: (1/4)"></Choice>
+      <Choice alias="L1.2" value="L1.2: (1/3)"></Choice>
+      <Choice alias="L1.3" value="L1.3: (1/2)"></Choice>
+      <Choice alias="L1.4" value="L1.4: (2/3)"></Choice>
+      <Choice alias="L1.5" value="L1.5: (3/4)"></Choice>
+    </Taxonomy>
+
+    <Header value="L2: Bottom part modifiers" />
+    <Taxonomy name="L2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="L2: Bottom part modifiers">
+      <Choice alias="L2.0" value="L2.0: One-part tooth or too broken to code"></Choice>
+      <Choice alias="L2.1" value="L2.1: Straight"></Choice>
+      <Choice alias="L2.2" value="L2.2: Flared"></Choice>
+    </Taxonomy>
+
+    <Header value="M1: Tip Shape" />
+    <Taxonomy name="M1" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="M1: Tip Shape">
+      <Choice alias="M1.0" value="M1.0: Tip not preserved/too broken to code"></Choice>
+      <Choice alias="M1.1" value="M1.1: Pointed"></Choice>
+      <Choice alias="M1.2" value="M1.2: Rounded/Dome"></Choice>
+      <Choice alias="M1.3" value="M1.3: Flat"></Choice>
+      <Choice alias="M1.4" value="M1.4: Bulbous"></Choice>
+      <Choice alias="M1.5" value="M1.5: Flowery"></Choice>
+      <Choice alias="M1.6" value="M1.6: Rake"></Choice>
+      <Choice alias="M1.7" value="M1.7: Extended tip"></Choice>
+      <Choice alias="M1.8" value="M1.8: Protruding"></Choice>
+    </Taxonomy>
+
+    <Header value="M2: Tip Material" />
+    <Taxonomy name="M2" toName="image" maxUsages="1" maxWidth="400px" minWidth="400px" leafsOnly="true" placeholder="M2: Tip Material">
+      <Choice alias="M2.0" value="M2.0: Tip not preserved/too broken to code"></Choice>
+      <Choice alias="M2.1" value="M2.1: Tip material same as rest of tooth"></Choice>
+      <Choice alias="M2.2" value="M2.2: Cap tip"></Choice>
+      <Choice alias="M2.3" value="M2.3: Rim tip"></Choice>
+      <Choice alias="M2.4" value="M2.4: Extended rim tip"></Choice>
+    </Taxonomy>
+
+  
+  </View>
+  
+
+  <View style="padding: 0em 1em; background: #f1f1f1; margin-right: 1em; border-radius: 3px; width:100%">
+    <View style="position: sticky; top: 0;">
+
+      <Text name="description" value="$description"></Text>
+      <Image name="image" value="$image"/>
+
+    </View>
+  </View>
+
+</View>
