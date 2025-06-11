@@ -58,7 +58,7 @@ def ls_get_filtered_tasks(ls_client, project, field, value, operator='equal', fi
     )
     response = requests.get(url, params=payload, headers=headers)
     if response.status_code!=200:
-        raise ValueError(f"Status Code {response.status_code}: {response.json().detail}")
+        raise ValueError(f"Status Code {response.status_code}: {response.json()['detail']}")
     return response.json()['tasks']
 
 
