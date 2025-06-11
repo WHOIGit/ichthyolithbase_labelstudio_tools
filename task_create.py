@@ -4,7 +4,6 @@ import argparse
 from io import BytesIO
 import importlib
 
-import pandas
 from PIL import Image
 from tqdm import tqdm
 from label_studio_sdk import LabelStudio
@@ -38,6 +37,7 @@ def ls_create_task(ls_client, project: int, task:dict, check_exists=True, dry_ru
             return ls_id, task_exists, task_created
 
     if not dry_run:
+        # todo fix: this sometimes errors out with httpx.RemoteProtocolError: Server disconnected without sending a response.
         new_task = ls_client.tasks.create(project=project, data=task)
         ls_id = new_task.id
     else:
@@ -96,7 +96,8 @@ def main():
     parser.add_argument('--s3_config', help="Path to JSON file containing S3 configuration")
     parser.add_argument('--ls_config', help="Path to JSON file with Label Studio configuration")
     parser.add_argument('--dry-run', action='store_true', help="Don't actually upload anything, just give stats")
-    parser.add_argument('--slice', nargs=2, metavar=('START','STOP'), help='operate on subset of tasks')
+    parser.add_argument('--slice', nargs=2, metavar=('START','STOP'), default=('0','None'), help='operate on subset of tasks')
+    # TODO upload predictions from csv
     args = parser.parse_args()
 
     config = utils.load_config(args.CONFIG)
@@ -113,11 +114,11 @@ def main():
         config['ROOT']
     )
 
-    if args.slice:
-        start,stop = args.slice
-        start = int(start) if str(start).isdigit() else None
-        stop = int(stop) if str(stop).isdigit() else None
-        tasks = tasks[slice(start,stop)]
+    #if args.slice:
+    start,stop = args.slice  # default is ("0","None")
+    start = int(start) if str(start).isdigit() else 0
+    stop = int(stop) if str(stop).isdigit() else None
+    tasks = tasks[slice(start,stop)]
 
     if args.s3_config:
         s3_config = utils.load_config(args.s3_config)
@@ -132,7 +133,7 @@ def main():
     report = dict(pids=[],
                   ls_extant_tasks=[], ls_created_tasks=[], ls_success=[], ls_ids=[],
                   s3_extant_objects=[], s3_created_objects=[], s3_success=[])
-    for task in tqdm(tasks):
+    for task in tqdm(tasks, initial=start, total=len(tasks)+start):
         pid = task['pid']
         report['pids'].append(pid)
 
