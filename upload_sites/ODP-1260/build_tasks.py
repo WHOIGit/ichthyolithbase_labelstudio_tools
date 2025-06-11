@@ -1,141 +1,80 @@
 import os
 from tqdm import tqdm
 
-def extract_fullslide_pid_metadata(path):
-    ...
-    # TODO
+import upload_sites.common
+
+
+def extract_fullslide_pid_metadata(path, add_description=True):
+    import re
+    # rois: {ROOT}/ODP-1260/1260B_101_17R_7W_74-75cm_g38um_N1of1_200x/unlabeled/1260B_101_17R_7W_74-75cm_g38um_N1of1_200x_obj00001_plane000.tif
+    # full: {ROOT}/ODP-1260/1260B_101_17R_7W_74-75cm_g38um_N1of1_200x/ODP 1260_boxes_th=0.1300_size=0050u-2000u_1260B_101_17R_7W_74-75cm_g38um_N1of1_200x.tif
+    metadata = {}
+    is_roi = bool('_obj' in path)
+    if is_roi:
+        metadata_str = path.split('/')[-3]
+        obj = path.split('_')[-2]  # obj00001
+        obj = int(obj[3:])
+    else:
+        obj = None
+        metadata_str = path.split('/')[-2]
+        fullslide_split = path.split('_')
+        fullslide_boxesth = fullslide_split[-10]  # th=0.1300
+        fullslide_size = fullslide_split[-9]    # size=0050u-2000u
+        boxesth = fullslide_boxesth.split('=')[1]
+        size = fullslide_size.split('=')[1]
+        metadata['fullslide__boxes_th'] = boxesth
+        metadata['fullslide__size'] = size
+
+    # metadata_str example: "1260B_101_17R_7W_74-75cm_g38um_N1of1_200x"
+    metadata_str = 'ODP-'+metadata_str
+    pattern = '(?P<site>ODP-\d+)(?P<hole>[A-Z]+)_(?P<internal_id>\d+)_(?P<core>[A-Za-z0-9]+)_(?P<section>[A-Za-z0-9]+)_(?P<interval>\d+-\d+cm)_(?P<fractioning>[A-Za-z0-9]+)_(?P<fullslideN>N\d+of\d+)_(?P<magnification>[A-Za-z0-9]+)'
+
+    match = re.match(pattern, metadata_str)
+    assert bool(match), f'metadata_str "{metadata_str}" did not match pattern "{pattern}". {match}'
+    ext = match.groupdict()  # extracted
+    metadata.update(ext)
+
+    sample_id = '{site}_{hole}_{core}_{section}_{interval}'.format(**metadata)
+    metadata['sample_id'] = sample_id
+    fullslide_id = '{sample_id}_{fullslideN}'.format(**metadata)
+    metadata['fullslide_id'] = fullslide_id
+    if is_roi:
+        metadata['object_id'] = '{fullslideN}_obj{object:05}'.format(object=obj, **metadata)
+        pid = '{sample_id}_{object_id}'.format(**metadata)
+        metadata['pid'] = pid
+    else:
+        pid = None
+
+    if is_roi and add_description:
+        s = ('internal_id={internal_id}, magnification={magnification}, size_fractioning={fractioning}\n'
+             'Sample: {sample_id}\n'
+             'Object: {object_id}'
+             )
+        metadata['description'] = s.format(**metadata)
+
     return fullslide_id, pid, metadata
 
-def extract_pid(path):
-    pid = os.path.basename(path)   # removes directory name
-    pid = os.path.splitext(pid)[0] # removes ".tif"
-    pid = pid.rsplit('_',1)[0]     # removes "_plane000"
-    pid = 'ODP-'+pid
-    return pid
 
-def extract_fullslide_id(path, idx):
-    return 'ODP-'+path.split('/')[idx]
-
-def build_tasks():
-    with open('ODF-1260_tifflist.txt') as f:
+def build_tasks(roi_listfile='ODP-1260_tifflist.txt',
+                fullslide_listfile='ODP-1260_biglist.txt',
+                ROOT='/user/esibert/ichthyolithBase/',
+                bucket_name='ichthyolith'):
+    with open(roi_listfile) as f:
         tiff_files = f.read().splitlines()
-    with open('ODF-1260_biglist.txt') as f:
+    with open(fullslide_listfile) as f:
         fullslide_files = f.read().splitlines()
 
-    labeled = [tiff for tiff in tiff_files if '/labeled/' in tiff]
-    unlabeled = [tiff for tiff in tiff_files if '/unlabeled/' in tiff]
-    #print(tiff_files[:2])
-    #print(fullslide_files[:2])
+    # list image files. sanstext are raw imagery, withtext has metadata-text and borders baked on
+    withtext = [tiff for tiff in tiff_files if '/labeled/' in tiff]
+    sanstext = [tiff for tiff in tiff_files if '/unlabeled/' in tiff]
 
-    print(check1:=set(tiff_files)-set(labeled)-set(unlabeled))  # check all accouted for
-    print(check2a:=len(labeled), check2b:=len({os.path.basename(tiff) for tiff in labeled}))
-    print(check3a:=len(unlabeled), check3b:=len({os.path.basename(tiff) for tiff in unlabeled}))
+    check1=set(tiff_files)-set(withtext)-set(sanstext)  # check all accouted for
+    check2a, check2b = len(withtext), len({os.path.basename(tiff) for tiff in withtext})
+    check3a, check3b = len(sanstext), len({os.path.basename(tiff) for tiff in sanstext})
     assert not check1
     assert check2a == check2b
     assert check3a == check3b
 
-    ROOT = '/user/esibert/ichthyolithBase/'
-
-    fullslide_polaroid_mapper = {}
-    for fullslide_polaroid_file in fullslide_files:
-        fullslide_id = extract_fullslide_id(fullslide_polaroid_file,-2)
-        map_overview = dict(
-            fullpath = ROOT+fullslide_polaroid_file,
-            tiff2jpg = True,
-            s3_key = f'fullslide_polaroid_jpg/{fullslide_id}.jpg'
-        )
-        fullslide_polaroid_mapper[fullslide_id] = map_overview
-
-    tasks = dict()
-    for tiff_file in unlabeled:
-        pid = extract_pid(tiff_file)
-        fullslide_id = extract_fullslide_id(tiff_file,-3)
-        task = dict(
-            data = dict(
-                pid = pid,
-                fullslide_id = fullslide_id
-            ),
-            map_rois_jpg = dict(
-                fullpath = ROOT+tiff_file,
-                tiff2jpg = True,
-                s3_key = f'rois_jpg/{pid}.jpg',
-            ),
-            map_rois_tiff = dict(
-                fullpath = ROOT+tiff_file,
-                tiff2jpg = False,
-                s3_key = f'rois_tiff/{pid}.tiff',
-            ),
-        )
-        if fullslide_id in fullslide_polaroid_mapper.keys():
-            task['map_fullslide_polaroid_jpg'] = fullslide_polaroid_mapper[fullslide_id]
-        tasks[pid] = task
-
-    for tiff_file in labeled:
-        pid = extract_pid(tiff_file)
-        fullslide_id = extract_fullslide_id(tiff_file,-3)
-        assert fullslide_id == tasks[pid]['data']['fullslide_id']
-        assert fullslide_id in pid
-        tasks[pid]['map_rois_polaroid_jpg'] = dict(
-            fullpath = ROOT+tiff_file,
-            tiff2jpg = True,
-            s3_key = f'rois_polaroid_jpg/{pid}.jpg',
-        )
-
-    for task in tqdm(tasks.values()):
-        compute_task_metadata(task)
-        add_s3_image_references(task)
-
+    tasks = upload_sites.common.build_tasks(sanstext, withtext, fullslide_files,
+                                    extract_fullslide_pid_metadata, bucket_name, ROOT)
     return tasks
-
-
-def compute_task_metadata(task):
-    import re
-    # ODP-1260B_101_17R_7W_74-75cm_g38um_N1of1_200x_obj00001
-    pattern = '(?P<site>ODP-[A-Za-z0-9]+)_(?P<sediment>[A-Za-z0-9]+)_(?P<core>[A-Za-z0-9]+)_(?P<section>[A-Za-z0-9]+)_(?P<interval>\d+-\d+cm)_(?P<fraction>[A-Za-z0-9]+)_N(?P<fullslideN>\d+)of(?P<fullslidesM>\d+)_(?P<magnification>[A-Za-z0-9]+)'
-    fullslide_id = task['data']['fullslide_id']
-    match = re.match(pattern, fullslide_id)
-    assert bool(match), f'fullslide_id "{fullslide_id}" did not match pattern "{pattern}". {match}'
-    ext = match.groupdict()  # extracted
-    ext['hole'] = ext['site'][-1]  # the B of ODP-1260B
-    ext['site'] = ext['site'][:-1] #
-
-    task['data'].update(ext)
-    task['data']['iodp'] = f"{ext['core']}_{ext['section']}_{ext['interval']}"
-    task['data']['object'] = str(int(task['data']['pid'].split('_')[-1][3:]))
-
-    if 'map_fullslide_polaroid_jpg' in task:
-        # {ROOT}/ODP-1260/1260B_101_17R_7W_74-75cm_g38um_N1of1_200x/ODP 1260_boxes_th=0.1300_size=0050u-2000u_1260B_101_17R_7W_74-75cm_g38um_N1of1_200x.tif
-        fullslide_path = task['map_fullslide_polaroid_jpg']['fullpath']
-        fullslide_split = os.path.basename(fullslide_path).split('_')
-        boxesth = fullslide_split[-10] # th=0.1300
-        size = fullslide_split[-9]   # size=0050u-2000u
-        boxesth = boxesth.split('=')[1]
-        size = size.split('=')[1]
-        task['data']['fullslide__boxes_th'] = boxesth
-        task['data']['fullslide__size'] = size
-
-def add_s3_image_references(task, bucket='ichthyolith'):
-    s3_url = 's3://{bucket}/{key}'
-
-    if 'map_rois_jpg' in task:
-        key = task['map_rois_jpg']['s3_key']
-        task['data']['image'] = s3_url.format(bucket=bucket, key=key)
-
-    if 'map_rois_polaroid_jpg' in task:
-        key = task['map_rois_polaroid_jpg']['s3_key']
-        task['data']['image_polaroid'] = s3_url.format(bucket=bucket, key=key)
-
-    if 'map_fullslide_polaroid_jpg' in task:
-        key = task['map_fullslide_polaroid_jpg']['s3_key']
-        task['data']['image_fullslide_polaroid'] = s3_url.format(bucket=bucket, key=key)
-
-
-
-
-tasks = build_tasks()
-print('done:', len(tasks))
-from pprint import pprint
-pprint(list(tasks.values())[0])
-
-# TODO ask if pid can be simplified.
-#      can we drop iodp (core section interval), magnification, fraction ?
