@@ -114,7 +114,7 @@ def main():
     )
 
     if args.slice:
-        start,stop = args.splice
+        start,stop = args.slice
         start = int(start) if str(start).isdigit() else None
         stop = int(stop) if str(stop).isdigit() else None
         tasks = tasks[slice(start,stop)]
