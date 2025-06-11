@@ -416,3 +416,112 @@ fields:
       - "I2.1: Top"
       - "I2.2: Middle"
       - "I2.3: Bottom"
+  I3:
+    <<: *Taxonomy_defaults
+    placeholder: 'I3: Barb Placement'
+    choices:
+    - 'I3.0: No barb(s)'
+    - 'I3.1: Outer-curve'
+    - 'I3.2: Inner-curve'
+    - 'I3.3: Straight-edge'
+  I4:
+    <<: *Taxonomy_defaults
+    placeholder: 'I4: Barb Shape'
+    choices:
+    - 'I4.0: No barb(s)'
+    - 'I4.1: Right triangle'
+    - 'I4.2: Obtuse'
+    - 'I4.3: Hooked'
+  J1:
+    <<: *Taxonomy_defaults
+    placeholder: 'J1: Pulp Cavity Length'
+    choices:
+    - 'J1.0: Cannot discern pulp cavity'
+    - 'J1.1: Rootless'
+    - 'J1.2: (1/4)'
+    - 'J1.3: (1/3)'
+    - 'J1.4: (1/2)'
+    - 'J1.5: (3/4)'
+    - 'J1.6: Full-length'
+  J2:
+    <<: *Taxonomy_defaults
+    placeholder: 'J2: Pulp Cavity Width'
+    choices:
+    - 'J2.0: Rootless or too broken to code'
+    - 'J2.1: Thin'
+    - 'J2.2: Medium'
+    - 'J2.3: Wide'
+    - 'J2.4: Total'
+  J3:
+    <<: *Taxonomy_defaults
+    placeholder: 'J3: Overall Pulp Cavity Shape'
+    choices:
+    - 'J3.0: Rootless or too broken to code'
+    - 'J3.1: Straight'
+    - 'J3.2: Concave'
+    - 'J3.3: Convex'
+    - 'J3.4: Dome'
+    - 'J3.5: Funnel'
+    - 'J3.6: Vase-shape'
+    - 'J3.7: Flat-top'
+    - 'J3.8: Asymmetrical'
+  J4:
+    <<: *Taxonomy_defaults
+    placeholder: 'J4: Pulp Cavity Additional Modifiers'
+    choices:
+    - 'J4.0: Rootless/no modifiers or too broken to code'
+    - 'J4.1: Rough'
+    - 'J4.2: Branching'
+    - 'J4.3: Extended-tip'
+    - 'J4.4: Radiating'
+  K1:
+    <<: *Taxonomy_defaults
+    placeholder: 'K1: Base Shape'
+    choices:
+    - 'K1.0: Base not preserved'
+    - 'K1.1: Flat'
+    - 'K1.2: Flared'
+    - 'K1.3: Tucked'
+    - 'K1.4: Inward'
+    - 'K1.5: Pointed'
+    - 'K1.6: Asymmetrical'
+    - 'K1.7: Hollow'
+  L1:
+    <<: *Taxonomy_defaults
+    placeholder: 'L1: Bottom part relative size (if two-part)'
+    choices:
+    - 'L1.0: One-part tooth or too broken to code'
+    - 'L1.1: (1/4)'
+    - 'L1.2: (1/3)'
+    - 'L1.3: (1/2)'
+    - 'L1.4: (2/3)'
+    - 'L1.5: (3/4)'
+  L2:
+    <<: *Taxonomy_defaults
+    placeholder: 'L2: Bottom part modifiers'
+    choices:
+    - 'L2.0: One-part tooth or too broken to code'
+    - 'L2.1: Straight'
+    - 'L2.2: Flared'
+  M1:
+    <<: *Taxonomy_defaults
+    placeholder: 'M1: Tip Shape'
+    choices:
+    - 'M1.0: Tip not preserved/too broken to code'
+    - 'M1.1: Pointed'
+    - 'M1.2: Rounded/Dome'
+    - 'M1.3: Flat'
+    - 'M1.4: Bulbous'
+    - 'M1.5: Flowery'
+    - 'M1.6: Rake'
+    - 'M1.7: Extended tip'
+    - 'M1.8: Protruding'
+  M2:
+    <<: *Taxonomy_defaults
+    placeholder: 'M2: Tip Material'
+    choices:
+    - 'M2.0: Tip not preserved/too broken to code'
+    - 'M2.1: Tip material same as rest of tooth'
+    - 'M2.2: Cap tip'
+    - 'M2.3: Rim tip'
+    - 'M2.4: Extended rim tip'
