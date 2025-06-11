@@ -1,6 +1,6 @@
 {
-  "roi_listfile": "DSDP-596_tifflist.txt",
-  "fullslide_listfile": "DSDP-596_biglist.txt",
+  "roi_listfile": "DSDP-596_tiffs.list",
+  "fullslide_listfile": "DSDP-596_fullslides.list",
   "task_builder_module": "upload_sites.DSDP-596.build_tasks",
   "ROOT": "/user/esibert/ichthyolithBase/",
 

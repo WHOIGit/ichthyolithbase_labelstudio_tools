@@ -1,0 +1,2 @@
+find DSDP-596 -type f -name *.tif > ~/sibert/DSDP-596_tiffs.list
+find DSDP-596 -type f -name *.jpg > ~/sibert/DSDP-596_fullslides.list

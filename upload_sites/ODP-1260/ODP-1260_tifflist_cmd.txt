@@ -1,0 +1,3 @@
+find ODP-1260 -type f -name "1260B*.tif" > ~/sibert/ODF-1260_tiffs.list
+find ODP-1260 -type f -name "ODP 1260*.tif" > ~/sibert/ODF-1260_fullslides.list
+
