@@ -96,8 +96,7 @@ def main():
     parser.add_argument('--s3_config', help="Path to JSON file containing S3 configuration")
     parser.add_argument('--ls_config', help="Path to JSON file with Label Studio configuration")
     parser.add_argument('--dry-run', action='store_true', help="Don't actually upload anything, just give stats")
-    parser.add_argument('--limited', metavar='N', type=int, help="only do first N tasks"
-                                                                 "")
+    parser.add_argument('--slice', nargs=2, metavar=('START','STOP'), help='operate on subset of tasks')
     args = parser.parse_args()
 
     config = utils.load_config(args.CONFIG)
@@ -114,8 +113,11 @@ def main():
         config['ROOT']
     )
 
-    if args.limited:
-        tasks = tasks[:args.limited]
+    if args.slice:
+        start,stop = args.splice
+        start = int(start) if str(start).isdigit() else None
+        stop = int(stop) if str(stop).isdigit() else None
+        tasks = tasks[slice(start,stop)]
 
     if args.s3_config:
         s3_config = utils.load_config(args.s3_config)

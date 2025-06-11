@@ -13,7 +13,7 @@ def build_tasks(sanstext:list[str],
     for fullslide_withtext_file in fullslide_files:
         fullslide_id,_,_ = metadata_extractor(fullslide_withtext_file)
         map_overview = dict(
-            fullpath = ROOT+fullslide_withtext_file,
+            filepath = ROOT+fullslide_withtext_file,
             tiff2jpg = True,
             s3_key = f'fullslide_withtext_jpg/{fullslide_id}.jpg'
         )
