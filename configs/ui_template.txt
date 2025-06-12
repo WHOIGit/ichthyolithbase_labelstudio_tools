@@ -12,7 +12,21 @@
     <View style="position: sticky; top: 0;">
 
       <Text name="description" value="$description"></Text>
-      <Image name="image" value="$image"/>
+
+      <Collapse accordion="true">
+        <Panel value="Fullslide with-text">
+          <View >
+          	<Image name="fullslide_withtext" value="$image_fullslide_withtext"/>
+          </View>
+        </Panel>
+        <Panel value="ROI with-text">
+          <View>
+          	<Image name="image_withtext" value="$image_withtext" defaultZoom="original"/>
+          </View>
+        </Panel>
+      </Collapse>
+
+      <Image name="image" value="$image" defaultZoom="original"/>
 
     </View>
   </View>
