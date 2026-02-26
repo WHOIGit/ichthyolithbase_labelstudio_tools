@@ -1,0 +1,6 @@
+labelstudio_tools
+sahi
+torch
+ultralytics
+scikit-image
+imagecodecs

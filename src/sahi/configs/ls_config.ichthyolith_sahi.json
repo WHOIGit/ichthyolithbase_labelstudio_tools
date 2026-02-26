@@ -1,0 +1,12 @@
+{
+  "host": "https://ichthyolith.whoi.edu",
+  "token": "████████████████████████████████████████",
+  "project": 6,
+  "pk": "image",
+  "s3_config": {
+    "bucket": "ichthyolith",
+    "endpoint_url": "http://vast.whoi.edu",
+    "aws_access_key_id": "M5A7TSAFQD6MKU259XZB",
+    "aws_secret_access_key": "████████████████████████████████████████"
+  }
+}
