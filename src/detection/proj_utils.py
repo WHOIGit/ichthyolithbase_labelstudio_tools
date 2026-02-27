@@ -4,9 +4,10 @@ from typing import Union
 
 import numpy as np
 
-
 from PIL import Image,ImageDraw
 from label_studio_sdk.converter.brush import mask2rle
+
+
 def coco_poly_to_ls_rle(poly_xy, image_width, image_height):
     mask_img = Image.new("L", (image_width, image_height), 0)
     draw = ImageDraw.Draw(mask_img)

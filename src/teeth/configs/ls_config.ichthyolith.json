@@ -1,5 +1,5 @@
 {
   "host": "https://ichthyolith.whoi.edu",
-  "token": "████████████████████████████████████████",
+  "token": "$LSCONFIG",
   "project": "3"
 }

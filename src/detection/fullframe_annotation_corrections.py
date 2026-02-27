@@ -3,7 +3,7 @@ import os
 
 from sahi.utils.coco import Coco, CocoAnnotation
 
-from core import LabelStudioPlus
+from labelstudio_tools import LabelStudioPlus
 
 lsp = LabelStudioPlus.from_config('configs/ls_config.ichthyolith_sahi.json')
 lsp.set_project('Fullframe Imagery')

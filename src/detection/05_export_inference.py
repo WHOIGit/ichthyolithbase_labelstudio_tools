@@ -18,7 +18,7 @@ from sahi.utils.coco import Coco, CocoAnnotation, CocoPrediction
 from label_studio_sdk import Prediction
 import label_studio_sdk.converter.imports.coco
 
-from core import LabelStudioPlus
+from labelstudio_tools import LabelStudioPlus
 from patch_sahi import CocoPlus
 from proj_utils import coco_poly_to_ls_rle, sort_prediction_result_SCANLINE
 

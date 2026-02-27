@@ -9,7 +9,7 @@ from sahi.utils.coco import Coco, CocoImage, CocoAnnotation
 from tqdm import tqdm
 from PIL import Image
 
-from utils import simple_task_filter_builder
+from labelstudio_tools.utils import simple_task_filter_builder
 from proj_utils import sort_prediction_result_SCANLINE
 
 Image.MAX_IMAGE_PIXELS = 20_000*20_000
@@ -21,7 +21,7 @@ from sahi.prediction import ObjectPrediction, PredictionResult
 #from sahi.utils.cv import visualize_object_predictions
 from sahi.postprocess.combine import NMMPostprocess
 
-from core import LabelStudioPlus
+from labelstudio_tools import LabelStudioPlus
 from patch_sahi import visualize_object_predictions
 
 def bitmask2img(bitmask, outfile):

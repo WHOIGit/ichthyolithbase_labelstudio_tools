@@ -1,7 +1,7 @@
 import os
 from tqdm import tqdm
 
-import upload_sites.common
+from teeth.common import build_tasks
 
 def extract_fullslide_pid_metadata(path, add_description=True):
     import re
@@ -69,7 +69,7 @@ def build_tasks(roi_listfile='DSDP-596_tifflist.txt',
     assert not check1
     #assert check2a == check2b
     #assert check3a == check3b
-    tasks = upload_sites.common.build_tasks(sanstext=[], withtext=withtext,
+    tasks = build_tasks(sanstext=[], withtext=withtext,
                             metadata_extractor=extract_fullslide_pid_metadata,
                             fullslide_files=fullslide_files,
                             bucket_name=bucket_name,

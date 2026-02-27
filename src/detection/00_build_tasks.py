@@ -6,7 +6,7 @@ from natsort import natsorted
 from PIL import Image
 Image.MAX_IMAGE_PIXELS = 400_000_000  # 20k * 20k pixels
 
-from core import LabelStudioPlus
+from labelstudio_tools import LabelStudioPlus
 lsp = LabelStudioPlus.from_config('configs/ls_config.ichthyolith_sahi.json')
 
 
